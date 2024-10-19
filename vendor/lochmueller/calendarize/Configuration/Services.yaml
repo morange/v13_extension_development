@@ -1,0 +1,109 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  _instanceof:
+    HDNET\Calendarize\Service\TimeTable\TimeTableInterface:
+      tags: [ 'calendarize.time_table' ]
+
+  HDNET\Calendarize\:
+    resource: '../Classes/*'
+
+  HDNET\Calendarize\Service\SecondaryTimeTableService:
+    arguments: [ !tagged_iterator { tag: 'calendarize.time_table' } ]
+
+  HDNET\Calendarize\EventListener\CalendarizeFieldListener:
+    tags:
+      - name: event.listener
+        identifier: 'calendarizeField'
+        event: TYPO3\CMS\Core\Database\Event\AlterTableDefinitionStatementsEvent
+
+  HDNET\Calendarize\EventListener\ImportSingleIcalEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'importSingelIcal'
+        event: HDNET\Calendarize\Event\ImportSingleIcalEvent
+
+  HDNET\Calendarize\EventListener\BookingCountriesListener:
+    tags:
+      - name: event.listener
+        identifier: 'bookingCountries'
+        event: HDNET\Calendarize\Event\GenericActionAssignmentEvent
+
+  HDNET\Calendarize\EventListener\CategoryFilterEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'categoryFilter'
+        event: HDNET\Calendarize\Event\GenericActionAssignmentEvent
+
+  HDNET\Calendarize\EventListener\SearchConstraintEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'defaultEventSearch'
+        event: HDNET\Calendarize\Event\IndexRepositoryFindBySearchEvent
+
+  HDNET\Calendarize\EventListener\CategoryConstraintEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'defaultEventConstraints'
+        event: HDNET\Calendarize\Event\IndexRepositoryDefaultConstraintEvent
+
+  HDNET\Calendarize\EventListener\PreviewRenderingEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'getExtensionSummary'
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent
+
+  HDNET\Calendarize\Command\CleanupCommandController:
+    tags:
+      - name: console.command
+        command: 'calendarize:cleanup'
+        description: 'Remove outdated events to keep a small footprint'
+        schedulable: true
+
+  HDNET\Calendarize\Command\ImportCommandController:
+    tags:
+      - name: console.command
+        command: 'calendarize:import'
+        description: 'Imports a iCalendar ICS into a page ID'
+        schedulable: true
+
+  HDNET\Calendarize\Command\ReindexCommandController:
+    tags:
+      - name: console.command
+        command: 'calendarize:reindex'
+        description: 'Reindex all events'
+        schedulable: true
+
+  HDNET\Calendarize\Property\TypeConverter\AbstractBookingRequest:
+    tags:
+      - name: extbase.type_converter
+        priority: 1
+        target: HDNET\Calendarize\Domain\Model\Request\AbstractBookingRequest
+        sources: array
+
+  HDNET\Calendarize\Service\PluginConfigurationService:
+    public: true
+
+  QueryBuilder.tt_content:
+    class: 'TYPO3\CMS\Core\Database\Query\QueryBuilder'
+    factory:
+      - '@TYPO3\CMS\Core\Database\ConnectionPool'
+      - 'getQueryBuilderForTable'
+    arguments:
+      - 'tt_content'
+
+  QueryBuilder.be_groups:
+    class: 'TYPO3\CMS\Core\Database\Query\QueryBuilder'
+    factory:
+      - '@TYPO3\CMS\Core\Database\ConnectionPool'
+      - 'getQueryBuilderForTable'
+    arguments:
+      - 'be_groups'
+
+  HDNET\Calendarize\Updates\PluginUpdater:
+    arguments:
+      $contentElementsQueryBuilder: '@QueryBuilder.tt_content'
+      $backendGroupsQueryBuilder: '@QueryBuilder.be_groups'

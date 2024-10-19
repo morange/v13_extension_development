@@ -1,0 +1,46 @@
+muldenland {
+	### Links and Targets ###
+	# Root Page ID
+	# cat = Projekt/links; type = int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.rootpageId
+	rootPageId = 1
+	# Hauptmenü
+	# cat = Projekt/links; type = int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.excludedPids
+	excludePagesMainMenu = 16
+	# formales Menü
+	# cat = Projekt/links; type = int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.formalMenuDirectoryId
+	formalMenuDirectoryId = 16
+	# Footermenü
+	# cat = Projekt/links; type = int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.footerMenuDirectoryId
+	excludePagesFooterId = 23, 24
+	# cat = Projekt/links; type = int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.searchPluginId
+	searchPluginId = 179
+	# cat = Projekt/storagePID; type = int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.calendarize.storagePID
+	calendarize.storagePID = 44
+
+
+	# cat=Projekt/file; type=int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.logoText
+	logoText = Logo
+	# cat=Projekt/file; type=int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.logoFile
+	logoFile =
+	# cat = Projekt/typo; type = string; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.operatorHeader
+	operatorHeader = Regionalmanagement Leipziger Muldenland
+	# cat = Projekt/typo; type = string; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.operatorFooter
+	operatorFooter = Regionalmanagement Leipziger Muldenland
+	# cat = Projekt/typo; type = string; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.address
+	address = Leipziger Straße 17, 04668 Grimma
+	# cat = Projekt/typo; type = string; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.mobilePhone
+	mobilephone =  0049 152 21 93 05 21
+	# cat = Projekt/typo; type = string; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.phone
+	phone =  0049 3437 70 70 71
+	# cat=Projekt/typo; type=int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.authorDesign
+	authorWork = Design & Entwicklung
+	# cat=Projekt/typo; type=int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.authorDevelopment
+	authorName = Matthes & Hofer // Der Matthes und Frau Hofer
+	# cat=Projekt/typo; type=int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.authorLink
+	authorLink = https://www.matthes-hofer.de
+	# cat=Projekt/typo; type=int+; label = LLL:EXT:muldenland/Resources/Private/Site/Language/be_locallang.xlf:template.constants.googleSiteVerificationCode
+	googlesiteverifikation =
+
+	# clearCacheCmd
+	clearCacheCmd = 44,67,32,35,36
+}

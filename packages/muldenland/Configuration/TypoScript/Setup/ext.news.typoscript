@@ -1,0 +1,119 @@
+plugin.tx_news {
+
+    view {
+        templateRootPaths {
+            0 = EXT:news/Resources/Private/Templates/
+            1 = {$plugin.tx_news.view.templateRootPath}
+            10 = EXT:muldenland/Resources/Private/Extensions/news/Templates/
+        }
+
+        partialRootPaths {
+            ## 0 = EXT:news/Resources/Private/Partials/
+            ## 1 = {$plugin.tx_news.view.partialRootPath}
+            ## 10 = EXT:muldenland/Resources/Private/Extensions/news/Partials/
+
+            1 = EXT:news/Resources/Private/Partials/
+            2 = {$plugin.tx_news.view.partialRootPath}
+            5 = EXT:muldenland/Resources/Private/Extensions/fluid_styled_content/Partials/
+            10 = EXT:muldenland/Resources/Private/Extensions/news/Partials/
+        }
+
+        layoutRootPaths {
+            0 = EXT:news/Resources/Private/Layouts/
+            1 = {$plugin.tx_news.view.layoutRootPath}
+            10 = EXT:muldenland/Resources/Private/Extensions/news/Layouts/
+        }
+    }
+
+    settings {
+        # cat = muldenland/displayDummyIfNoMedia; type = string; label = Fallback Image aktivieren?:aktiviere das Fallback Image für fehlende Projektbilder
+        displayDummyIfNoMedia = 0
+        # cat = muldenland/dummyImage; type = string; label = Pfad zum Fallback Image:Fallback für fehlende Projektbilder
+        # list.media.dummyImage = EXT:muldenland/Resources/Public/Images/dummynoimage.png
+
+        previewHiddenRecords = 0
+        enablePreviewOfHiddenRecords = 0
+
+        # verhindert die Überschreibung im Modul
+        disableOverrideDemand = 1
+
+        cropMaxCharacters = 125
+
+        media {
+            # Thumbnails im Slider und in der Lightbox
+            thumbnail.maxWidth = 154m
+            thumbnail.maxHeight = 110m
+
+
+            # Bildgröße der EInträge bestimmen
+            # normal
+            image.maxWidth = 324m
+            image.maxHeight = 260m
+
+            # Top-Projekte
+            image.topmaxWidth = 664m
+            image.topmaxHeight = 465m
+
+            # Projekte auf der Detailseite
+            detail.image.maxWidth = 974m
+            detail.image.maxHeight = 627m
+
+        }
+
+        #detail.showSocialShareButtons = 0
+        list {
+
+            # Bildgröße der EInträge bestimmen
+            # normal
+            media.image.maxWidth = 324
+            media.image.maxHeight = 260
+
+            # Top-Projekte
+            media.image.topmaxWidth = 664
+            media.image.topmaxHeight = 465
+
+            paginate {
+                # Paginierung deaktieren
+                insertAbove = 0
+
+                # Anzahl der Items per Load / Page
+                itemsPerPage = 15
+            }
+        }
+    }
+
+}
+
+
+# Breadcrumb News
+page.10 = FLUIDTEMPLATE
+page.10 {
+    # [...] template settings
+    dataProcessing {
+        # [...] Other data processors
+        1000 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        1000 {
+            as = breadcrumb
+            special = rootline
+            special.range = 0|-1
+            excludeUidList = 40
+        }
+        1010 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+        1010.menus = breadcrumb
+    }
+}
+
+config.recordLinks.tx_news {
+    typolink {
+        # Detail page
+        parameter.cObject = USER
+        parameter.cObject {
+            userFunc = GeorgRinger\News\Service\LinkHandlerTargetPageService->process
+            news.data = field:uid
+            # Page used if no detail page is set in the category
+            fallback = 41
+        }
+        additionalParams.data = field:uid
+        additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
+    }
+}

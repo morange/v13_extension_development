@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-03-04T10:24:37Z"
+	      product-name="muldenland">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="frontend.constants.searchPlaceholder">
+				<source>Search</source>
+				<target>Suche</target>
+			</trans-unit>
+			<trans-unit id="frontend.constants.mobilePhone">
+				<source>Mobile</source>
+				<target>Mobil</target>
+			</trans-unit>
+			<trans-unit id="frontend.constants.phone">
+				<source>Phone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="frontend.constants.design">
+				<source>Design</source>
+				<target>Gestaltung</target>
+			</trans-unit>
+			<trans-unit id="frontend.constants.development">
+				<source>Development</source>
+				<target>Entwicklung</target>
+			</trans-unit>
+			<trans-unit id="frontend.youarehere">
+				<source>You are here</source>
+				<target>Sie sind hier</target>
+			</trans-unit>
+			<trans-unit id="frontend.contact">
+				<source>Contact</source>
+				<target>Kontakt</target>
+			</trans-unit>
+			<trans-unit id="frontend.menu">
+				<source>Menu</source>
+				<target>Menü</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

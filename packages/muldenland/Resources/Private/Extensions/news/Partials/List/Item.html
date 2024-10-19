@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html.org
+-->
+<f:switch expression="{settings.templateLayout}">
+	<f:case value="4">
+		<div class="article cell small-12 medium-12 large-12">
+			<f:render arguments="{_all}" partial="List/Columns/Column2ImageTeaser" />
+		</div>
+	</f:case>
+	<f:case value="3">
+	<div class="article cell small-12 medium-6 large-4">
+		<f:render arguments="{_all}" partial="List/Columns/Column3" />
+	</div>
+</f:case>
+	<f:case value="2">
+		<div class="article cell margin1remtopbottom small-12 medium-6 large-6">
+			<f:render arguments="{_all}" partial="List/Columns/Column2" />
+		</div>
+	</f:case>
+	<f:defaultCase>
+		<div class="article cell margin1remtopbottom small-12 medium-12 large-12">
+			<f:render arguments="{_all}" partial="List/Columns/Column2" />
+		</div>
+	</f:defaultCase>
+</f:switch>
+</html>

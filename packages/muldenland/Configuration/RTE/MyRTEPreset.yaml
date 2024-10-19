@@ -1,0 +1,91 @@
+####
+# Example of what CKEditor can all bring
+###
+
+# Load default processing options
+imports:
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+
+# Add configuration for the editor
+# For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
+editor:
+  config:
+    style:
+      definitions:
+        # block level styles
+        - { name: 'Orange title H2', element: 'h2', classes: [ ], styles: { color: 'orange', background: 'blue' } }
+        - { name: 'Orange title H3', element: 'h3', classes: [ ], styles: { color: 'orange', background: 'blue' } }
+        - { name: 'Quote / Citation', element: 'blockquote', classes: [ ], }
+        - { name: 'Code block', element: 'code', classes: [ ], }
+        # Inline styles
+        # - { name: 'Yellow marker', element: 'span', classes: [ ], styles: { background-color: 'yellow' } }
+    
+    heading:
+      options:
+        - { model: 'paragraph', title: 'LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.paragraph' }
+        - { model: 'heading2', view: 'h2', title: 'LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.headline_normal' }
+        - { model: 'heading3', view: 'h3', title: 'LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.headline3' }
+        
+    ### Doku ###
+    # grouping separator
+    # - '|'
+    # line break
+    # - '-'
+    ### Doku ###
+    
+    toolbar:
+      items:
+        # - style
+        - heading
+        - '|'
+        # - bold
+        - italic
+        # - underline
+        # - strikethrough
+        # - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - clipboard
+        - removeFormat
+        - undo
+        - redo
+        - '|'
+        - find
+        - selectAll
+        - '|'
+        - link
+        # - insertTable
+        # - tableColumn
+        # - tableRow
+        # - mergeTableCells
+        - '|'
+        - bulletedList
+        - numberedList
+        # - blockQuote
+        # - indent
+        # - outdent
+        # - alignment
+        - '|'
+        - specialCharacters
+        - '|'
+        - sourceEditing
+        - showBlocks
+        # - horizontalLine
+    
+    
+    extraPlugins:
+      - justify
+      - autolink
+      - editorplaceholder
+      - find
+      - wordcount
+    
+    alignment:
+      options:
+        - { name: 'left', className: 'text-start' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-end' }
+        # - { name: 'justify', className: 'text-justify' }

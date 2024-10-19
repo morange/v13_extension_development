@@ -1,0 +1,202 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Redakteur
+    title: '[Role] ACL:Redakteur'
+    TSconfig: ''
+    pagetypes_select:
+      - 1
+      - 3
+      - 4
+      - 254
+      - 255
+    tables_select: {  }
+    tables_modify:
+      - backend_layout
+      - pages
+      - sys_file
+      - sys_file_collection
+      - sys_file_metadata
+      - sys_file_reference
+      - sys_file_storage
+      - sys_note
+      - tt_content
+      - tx_yoastseo_prominent_word
+      - tx_yoastseo_related_focuskeyword
+    groupMods:
+      - about
+      - dashboard
+      - media_management
+      - recycler
+      - user_setup
+      - web_info
+      - web_info_overview
+      - web_info_translations
+      - web_layout
+      - web_linkvalidator
+      - web_list
+      - yoast_YoastSeoCrawler
+      - yoast_YoastSeoDashboard
+      - yoast_YoastSeoOverview
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:list'
+        - 'CType:textmedia'
+        - 'CType:uploads'
+    non_exclude_fields:
+      backend_layout:
+        - hidden
+        - icon
+      pages:
+        - abstract
+        - author
+        - author_email
+        - cache_tags
+        - cache_timeout
+        - canonical_link
+        - content_from_pid
+        - description
+        - doktype
+        - endtime
+        - extendToSubpages
+        - fe_group
+        - hidden
+        - keywords
+        - lastUpdated
+        - layout
+        - media
+        - module
+        - mount_pid_ol
+        - nav_hide
+        - nav_title
+        - newUntil
+        - no_follow
+        - no_index
+        - no_search
+        - og_description
+        - og_image
+        - og_title
+        - php_tree_stop
+        - rowDescription
+        - seo_title
+        - shortcut_mode
+        - sitemap_changefreq
+        - sitemap_priority
+        - starttime
+        - subtitle
+        - target
+        - twitter_card
+        - twitter_description
+        - twitter_image
+        - twitter_title
+        - tx_yoastseo_cornerstone
+        - tx_yoastseo_focuskeyword
+        - tx_yoastseo_focuskeyword_analysis
+        - tx_yoastseo_focuskeyword_related
+        - tx_yoastseo_focuskeyword_synonyms
+        - tx_yoastseo_hide_snippet_preview
+        - tx_yoastseo_insights
+        - tx_yoastseo_readability_analysis
+        - tx_yoastseo_robots_noarchive
+        - tx_yoastseo_robots_noimageindex
+        - tx_yoastseo_robots_nosnippet
+        - tx_yoastseo_snippetpreview
+      sys_file_collection:
+        - endtime
+        - hidden
+        - starttime
+      sys_file_metadata:
+        - caption
+        - color_space
+        - content_creation_date
+        - content_modification_date
+        - copyright
+        - creator
+        - creator_tool
+        - download_name
+        - duration
+        - fe_groups
+        - keywords
+        - language
+        - latitude
+        - location_city
+        - location_country
+        - location_region
+        - longitude
+        - note
+        - pages
+        - publisher
+        - ranking
+        - source
+        - status
+        - title
+        - unit
+        - visible
+      sys_file_reference:
+        - alternative
+        - autoplay
+        - crop
+        - description
+        - link
+        - showinpreview
+        - sync_crop_area
+        - title
+      tt_content:
+        - bullets_type
+        - endtime
+        - fe_group
+        - file_collections
+        - filelink_size
+        - filelink_sorting
+        - filelink_sorting_direction
+        - frame_class
+        - header_layout
+        - header_link
+        - header_position
+        - hidden
+        - image_zoom
+        - imageborder
+        - imagecols
+        - imageheight
+        - imageorient
+        - imagewidth
+        - layout
+        - linkToTop
+        - pages
+        - recursive
+        - rowDescription
+        - sectionIndex
+        - space_after_class
+        - space_before_class
+        - starttime
+        - sys_language_uid
+        - table_caption
+        - table_class
+        - table_delimiter
+        - table_enclosure
+        - table_header_position
+        - table_tfoot
+        - tx_yoastseo_linking_suggestions
+        - uploads_description
+        - uploads_type
+      tx_yoastseo_related_focuskeyword:
+        - analysis
+        - hidden
+        - keyword
+        - synonyms
+        - sys_language_uid

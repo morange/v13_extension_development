@@ -1,0 +1,91 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:layout name="Default"/>
+<a class="show-for-sr skip-to-content" href="#main-area">
+	<f:translate
+			key="LLL:EXT:muldenland/Resources/Private/Site/Language/fe_locallang.xlf:frontend.skip-to-content"/>&nbsp;
+</a>
+<div data-sticky-container>
+	<div class="sticky main is-at-top is-stuck" data-margin-top="1" data-options="marginTop:0;" data-sticky
+	     style="z-index: 100; width:100%; transform: none !important;">
+		<f:comment>
+			<!-- Searchform-->
+			<!--
+			<f:render arguments="{_all}" partial="Searchform"/>
+			-->
+		</f:comment>
+		<!-- Formaler Header-->
+		<f:render arguments="{_all}" partial="FormalHeader"/>
+		
+		<!-- Navigation-->
+		<f:render arguments="{_all}" partial="Mainnavigation"/>
+		
+		<!--  -->
+		<div class="overlay-is-open"></div>
+	</div>
+</div>
+
+<!-- Breadcrumbs-->
+<f:render arguments="{_all}" partial="Breadcrumbs"/>
+
+<!-- Carousel-->
+<section class="header-area" name="header">
+	<f:render arguments="{_all}" partial="HeaderImage"/>
+</section>
+
+<section class="main-area" name="main" id="main-area">
+	<!-- Content -->
+	<!--TYPO3SEARCH_begin-->
+	<f:render arguments="{_all}" partial="Content"/>
+	<!--TYPO3SEARCH_end-->
+</section>
+
+<section class="founding-area" name="founding">
+	<!-- Content EU -->
+	<f:render arguments="{_all}" partial="Eufoerderung"/>
+</section>
+
+<!-- Login -->
+<section class="login-area" name="login">
+	<f:render arguments="{_all}" partial="Login"/>
+</section>
+<!-- Footer-->
+<section class="footer-area" name="footer">
+	<div class="line"></div>
+	<!-- FormalNavigation-->
+	<nav class="row">
+		<div class="column">
+			<div class="top-bar topbar-sticky-shrink">
+				<div class="top-bar-left"></div>
+
+				<div class="top-bar-right columns footer-menu">
+					<ul class="row horizontal menu accordion-menu menu-formal" data-accordion-menu>
+						<f:for as="item" each="{formalesMenuFooter}">
+							<f:render arguments="{_all}" partial="Formalnavigation"/>
+						</f:for>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 5120 96.7">
+		<path class="cls-1" d="M5120,96.7v-24.6S3361.7,44.9,3228.4,1.1c-27-8.9-77.1,40.8-97.4,43.5-20.2,2.7-52-7.5-74-7.5s-66.2,11.8-85.2,11.8-42.2-12.2-85-12.2-42,26.3-130.2,23.1c-54.8-2-182.6-41.7-237.2-35.5-10.7,1.2-61,4.3-130.4,8.2-31.6,1.8-63.5-12.3-96.2-9.7-31.7,2.5-62,18.6-91.9,20.3l-34.6,2c-29.9,1.7-57.8,18.1-87.5,20.6-34.8,2.8-68.9-11.4-100.8-9.4-14.9.9-29.3,1.8-43,2.7-32.2,2.1-138.6,22.5-170.4,24.7-21.1.5-48.5-14.5-130.8-4-9.1,1.2-1620.4-4.5-1633.7-7.5v24.6h5120Z"/>
+	</svg>
+	<f:comment>
+	<!--
+	<svg data-name="hg-welle" id="hg-welle" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<path class="cls-1" d="M1920,86.9V8.6c-88.6,10.8-158.2,36.3-291.6-7.5-27-8.9-77.1,40.8-97.4,43.5s-52-7.5-74-7.5-66.2,11.8-85.2,11.8-42.2-12.2-85-12.2-42,26.3-130.2,23.1c-54.8-2-182.7-41.7-237.2-35.5-10.7,1.2-61,4.3-130.4,8.2-31.6,1.8-63.5-12.3-96.2-9.7-31.7,2.5-62,18.6-91.9,20.3l-34.6,2c-29.9,1.7-57.8,18.1-87.5,20.6-34.8,2.9-68.9-11.4-100.8-9.4-14.9.9-29.3,1.8-43,2.8-32.2,2.1-138.6,22.5-170.4,24.7-21.1.5-48.5-14.5-130.8-4-9.1,1.2-20.4-4.5-33.7-7.5v14.8h1920Z"
+		      fill="#edf5f8"/>
+	</svg>
+	-->
+	</f:comment>
+	<div class="footer">
+		<f:render arguments="{_all}" partial="FooternavigationArea"/>
+		<f:render arguments="{_all}" partial="Operator"/>
+	</div>
+</section>
+
+<!-- Copyright -->
+<section class="copyright">
+	<f:render arguments="{_all}" partial="Copyright"/>
+</section>
+</html>

@@ -1,0 +1,37 @@
+/*
+plugin.tx_linkhandler {
+    tx_calendarize_domain_model_event {
+        parameter = {$linkToStuff}
+        additionalParams = &tx_calendarize_calendar[event]={field:uid}
+        additionalParams.insertData = 1
+        useCacheHash = 1
+    }
+}
+*/
+
+plugin.tx_calendarize {
+    view {
+        templateRootPaths {
+            50 = EXT:calendarize/Resources/Private/Templates/
+            100 = {$plugin.tx_calendarize.view.templateRootPath}
+            200 = EXT:muldenland/Resources/Private/Extensions/calendarize/Templates/
+        }
+
+
+        partialRootPaths {
+            50 = EXT:calendarize/Resources/Private/Partials/
+            100 = {$plugin.tx_calendarize.view.partialRootPath}
+            200 = EXT:muldenland/Resources/Private/Extensions/calendarize/Partials/
+        }
+
+        layoutRootPaths {
+            50 = EXT:calendarize/Resources/Private/Layouts/
+            100 = {$plugin.tx_calendarize.view.layoutRootPath}
+            200 = EXT:muldenland/Resources/Private/Extensions/calendarize/Layouts/
+        }
+    }
+
+    settings {
+        // calendarizeUhr = {$mypackage.calendarizeUhr}
+    }
+}

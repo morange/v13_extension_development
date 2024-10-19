@@ -1,0 +1,17 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:layout name="Default"/>
+<f:section name="Main">
+	<div class="grid-x grid-margin-x" data-equalizer data-equalize-on="medium" id="test-eq">
+		<div class="cell small-12 medium-6 large-6" data-equalizer-watch>
+			<f:for as="child" each="{childrenLeft}">
+				<f:format.raw>{child.renderedContent}</f:format.raw>
+			</f:for>
+		</div>
+		<div class="cell small-12 medium-6 large-6" data-equalizer-watch>
+			<f:for as="child" each="{childrenRight}">
+				<f:format.raw>{child.renderedContent}</f:format.raw>
+			</f:for>
+		</div>
+	</div>
+</f:section>
+</html>

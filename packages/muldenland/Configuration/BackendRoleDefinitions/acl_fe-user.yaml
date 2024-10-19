@@ -1,0 +1,57 @@
+RoleDefinitions:
+  -
+    identifier: ACL:FE-user
+    title: '[Role] ACL:FE-user'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - fe_groups
+      - fe_users
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny: {  }
+    non_exclude_fields:
+      fe_groups:
+        - hidden
+        - subgroup
+        - tx_extbase_type
+      fe_users:
+        - TSconfig
+        - address
+        - city
+        - company
+        - country
+        - disable
+        - email
+        - endtime
+        - fax
+        - felogin_forgotHash
+        - first_name
+        - image
+        - last_name
+        - lastlogin
+        - middle_name
+        - name
+        - starttime
+        - telephone
+        - title
+        - tx_extbase_type
+        - www
+        - zip
+

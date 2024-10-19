@@ -1,0 +1,15 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+	
+	<f:flashMessages/>
+	<f:comment>
+		<f:link.action action="list" arguments="{hmac: extended.pluginHmac}" format="xml">RSS</f:link.action>
+		<f:link.action action="list" arguments="{hmac: extended.pluginHmac}" format="atom">Atom</f:link.action>
+		<f:link.action action="list" arguments="{hmac: extended.pluginHmac}" format="ics">iCal</f:link.action>
+	</f:comment>
+	<div class="row">
+		<f:render arguments="{settings: settings, indices: indices, contentObject:contentObject, pagination: pagination}"
+		          partial="List"/>
+	</div>
+</f:section>

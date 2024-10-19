@@ -1,0 +1,21 @@
+{
+	"name": "dermatthesfrauhofer/muldenland",
+	"description": "Template",
+	"type": "typo3-cms-extension",
+	"lisenice": "GPL-2.0-or-later",
+	"version": "1.0.0",
+	"author": [{
+		"name": "Steffen Matthes",
+		"email": "info@dermatthes-frauhofer.de"
+	}],
+	"require": {
+		"typo3/cms-fluid-styled-content": "^12.4",
+		"b13/container": "^2.3",
+		"georgringer/news": "^11.4"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "muldenland"
+		}
+	}
+}

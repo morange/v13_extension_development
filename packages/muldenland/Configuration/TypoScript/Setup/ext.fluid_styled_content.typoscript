@@ -1,0 +1,21 @@
+lib.contentElement {
+	partialRootPaths {
+		100 = EXT:muldenland/Resources/Private/Extensions/fluid_styled_content/Partials/
+	}
+
+	layoutRootPaths {
+		100 = EXT:muldenland/Resources/Private/Extensions/fluid_styled_content/Layouts/
+	}
+
+	templateRootPaths {
+		100 = EXT:muldenland/Resources/Private/Extensions/fluid_styled_content/Templates/
+	}
+
+}
+
+## data Attribut für lightbox Script
+## https://fslightbox.com/
+## lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = data-fslightbox="image-{field:uid}" data-caption="{file:current:title}" data-type="image"
+## lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = data-fslightbox="image-{field:uid}" data-caption="<h2>{file:current:title}</h2><p>{file:current:description}</p>" data-thumb="/fileadmin/user_upload/Projekte/069/69-netzschkau-f66-b-58af37b73b38d.jpg"
+## data-thumb="/fileadmin/user_upload/Projekte/061/050-lgs-rb-s-01-970.jpg"
+

@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:if condition="{settings.cssFile}">
+	<f:asset.css identifier="ext-news" href="{settings.cssFile}" />
+</f:if>
+<f:asset.css identifier="my-news" href="EXT:muldenland/Resources/Public/Css/news.css" />
+
+<div class="news">
+	<f:render section="content" />
+</div>
+</html>

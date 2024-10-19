@@ -1,0 +1,63 @@
+RoleDefinitions:
+  -
+    identifier: ACL:TT-Address
+    title: '[Role] ACL:TT-Address'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - tt_address
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny: {  }
+    non_exclude_fields:
+      tt_address:
+        - company
+        - country
+        - description
+        - endtime
+        - hidden
+        - image
+        - latitude
+        - longitude
+        - mobile
+        - position
+        - region
+        - room
+        - slug
+        - starttime
+        - title
+        - www
+      tt_content:
+        pi_flexform:
+          ttaddress_listview:
+            sDEF:
+              - settings.groups
+              - settings.groupsCombination
+              - settings.ignoreWithoutCoordinates
+              - settings.pages
+              - settings.recursive
+              - settings.singleRecords
+              - settings.sortBy
+              - settings.sortOrder
+            sDISPLAY:
+              - settings.displayMode
+              - settings.hidePagination
+              - settings.paginate.itemsPerPage
+              - settings.singlePid
+

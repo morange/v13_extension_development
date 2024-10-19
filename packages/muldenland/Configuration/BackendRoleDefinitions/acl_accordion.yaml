@@ -1,0 +1,43 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Accordion
+    title: '[Role] ACL:Accordion'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - dermatthesfrauhofer_accordion_items
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:dermatthesfrauhofer_accordion'
+    non_exclude_fields:
+      dermatthesfrauhofer_accordion_items:
+        - bodytext
+        - editlock
+        - endtime
+        - fe_group
+        - header
+        - hidden
+        - starttime
+        - sys_language_uid
+      tt_content:
+        - dermatthesfrauhofer_accordion_items
+        - dermatthesfrauhofer_accordion_uppercase
+

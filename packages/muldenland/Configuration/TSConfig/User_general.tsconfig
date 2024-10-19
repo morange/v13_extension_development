@@ -1,0 +1,72 @@
+## Seiten-IDs im Seitenbaum anzeigen
+options {
+	pageTree {
+		# show UID Pages
+		showPageIdWithTitle = 1
+
+		# If set, the user db mount path above the mount itself is shown. This is useful if you work a lot with user db mounts.
+		showPathAboveMounts = 1
+
+		backgroundColor {
+			// Start
+			# 40 = orange
+			// Login und Unterseiten
+			17 = orange
+			// fehlgeschlagener Login
+			18 = orange
+			// Logout
+			19 = orange
+			// Suche
+			11 = orange
+
+			// CALENDARIZE
+			// Termine
+			5 = lightgreen
+
+			// NEWS
+			// Meldungen
+			6 = lightblue
+			// Projekte
+			44 = lightblue
+			45 = lightblue
+			46 = lightblue
+			47 = lightblue
+			48 = lightblue
+			49 = lightblue
+			50 = lightblue
+			51 = lightblue
+
+			//
+
+			// HTTP Sonderseiten
+			12 = pink
+			13 = pink
+			14 = pink
+			15 = pink
+		}
+	}
+
+	# Seiten Cache leeren
+	clearCache.pages = 1
+	# Seiten Cache inkl. Template Cache leeren
+	clearCache.all = 1
+
+	defaultUploadFolder = 1:fileadmin/muldenland/user_upload/
+}
+
+
+setup {
+	# diabeld the field
+	fields.emailMeAtLogin.enabled = 1
+
+	# And force the value of this field to be set to 1
+	override.emailMeAtLogin = 0
+
+	default.lang = de
+
+	override.be_users.lang = de
+	default.be_users.lang = de
+
+	# If set, hidden files and folders will be shown in the filelist.
+	fields.showHiddenFilesAndFolders.disabled = 1
+}

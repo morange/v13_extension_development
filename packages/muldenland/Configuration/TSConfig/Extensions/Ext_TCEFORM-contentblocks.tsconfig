@@ -1,0 +1,105 @@
+#data[tt_content][66][dermatthesfrauhofer_accordion_uppercase]
+TCEFORM {
+	tt_content {
+		# Content-Blocks
+		## Accordion
+		## header_layout
+		# header_layout.types.dermatthesfrauhofer_accordion.disabled = 1
+		header_layout.types.dermatthesfrauhofer_accordion {
+			removeItems = 0, 1, 2, 3, 4, 5
+		}
+
+		## header_type
+		header_type.types.dermatthesfrauhofer_accordion.disabled = 1
+		## header_position
+		header_position.types.dermatthesfrauhofer_accordion.disabled = 1
+		## uppercase
+		dermatthesfrauhofer_accordion_uppercase.disabled = 1
+		## sys_language_uid
+		dermatthesfrauhofer_accordion_items.sys_language_uid.disabled = 1
+		# data[dermatthesfrauhofer_accordion_items][6][sys_language_uid]
+
+
+		## Fe-Users
+		## header_layout
+		header_layout.types.dermatthesfrauhofer_feusers.disabled = 1
+
+
+		## Icon with Headline
+		## header_layout
+		header_layout.types.dermatthesfrauhofer_iconwithheadline {
+			removeItems = 0, 2, 3, 4, 5
+		}
+
+		## header_layout
+		header_type.types.dermatthesfrauhofer_iconwithheadline {
+			removeItems = 4, 5, 6
+		}
+
+		## header_position
+		header_position.types.dermatthesfrauhofer_iconwithheadline {
+			removeItems = right, left
+		}
+
+
+		## Slider
+		## header_layout
+		header_layout.types.dermatthesfrauhofer_slider {
+			removeItems = 0, 1, 2, 3, 4, 5
+		}
+
+		## header_layout
+		header_type.types.dermatthesfrauhofer_slider.disabled = 1
+		## header_position
+		header_position.types.dermatthesfrauhofer_slider.disabled = 1
+		## uppercase
+		dermatthesfrauhofer_slider_uppercase.disabled = 1
+
+
+		## Projectbox
+		## header_layout
+		header_layout.types.dermatthesfrauhofer_projectbox {
+			removeItems = 1, 2, 3, 4, 5
+		}
+
+		## header_layout
+		header_type.types.dermatthesfrauhofer_projectbox {
+			removeItems = 0, 1, 2, 4, 5, 6
+		}
+
+		## header_position
+		header_position.types.dermatthesfrauhofer_projectbox {
+			removeItems = right, left
+		}
+
+		## uppercase
+		dermatthesfrauhofer_projectbox_uppercase.disabled = 1
+
+
+		## 2cols
+		## header_layout
+		header_layout.types.2cols {
+			removeItems = 0, 1, 2, 3, 4, 5
+		}
+
+		## layout
+		layout.types.2cols {
+			removeItems = 1, 2, 3, 120
+		}
+
+
+		## 3cols
+		## header_layout
+		header_layout.types.3cols {
+			removeItems = 0, 1, 2, 3, 4, 5
+		}
+
+		## layout
+		layout.types.3cols {
+			removeItems = 1, 2, 3, 120
+		}
+
+	}
+}
+
+# TCAdefaults.tt_content.header_layout.types.dermatthesfrauhofer_accordion = 100

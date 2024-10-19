@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+			xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+			xmlns:c="http://typo3.org/ns/HDNET/Calendarize/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<tr>
+	<td class="col-icon">
+		<core:iconForRecord
+			table="{index.foreignTable}"
+			row="{c:be.recordRow(table:index.foreignTable, uid:index.originalObject.uid)}"
+		/>
+	</td>
+	<td class="col-title col-responsive">
+		<be:link.editRecord uid="{index.foreignUid}" table="{index.configuration.tableName}"
+												returnUrl="{f:be.uri(route: 'web_calendarize')}">
+			<f:render partial="{index.configuration.partialIdentifier}/Title"
+					  arguments="{index: index}"
+					  optional="true" default="Error 1701724662: MISSING title partial for '{index.configuration.partialIdentifier}'."/>
+		</be:link.editRecord>
+	</td>
+	<td class="nowrap">
+		<f:render partial="DateInformation" arguments="{index: index}"/>
+	</td>
+	<td class="nowrap">
+		{index.configuration.uniqueRegisterKey}
+	</td>
+	<td class="nowrap">
+		<c:languageInformation languageUid="{index.sysLanguageUid}" pid="{index.pid}" />
+	</td>
+	<td class="nowrap">
+		{index.foreignUid}
+	</td>
+	<td class="col-control nowrap">
+		<div class="btn-group" role="group">
+			<be:link.editRecord class="btn btn-default" uid="{index.foreignUid}" table="{index.configuration.tableName}"
+													returnUrl="{f:be.uri(route: 'web_calendarize')}">
+				<core:icon identifier="actions-open"/>
+			</be:link.editRecord>
+		</div>
+	</td>
+</tr>
+</html>

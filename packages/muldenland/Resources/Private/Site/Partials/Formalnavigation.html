@@ -1,0 +1,82 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:spaceless>
+	
+	<f:comment>
+		<!--
+	<div class="top-bar-right columns menu-formal">
+		<ul class="row horizontal menu accordion-menu row" data-accordion-menu>
+			<f:for as="item" each="{formalesMenu}">
+				<f:render arguments="{_all}" section="link"/>
+			</f:for>
+		</ul>
+	</div>
+				<li>
+							<f:link.page pageUid="56" additionalParams="{logintype:'logout'}">Abmelden</f:link.page>
+						</li>
+			
+	-->
+	</f:comment>
+	
+	
+		<li class="columns menu-text item-{item.data.uid} {f:if(condition:item.active, then:' active')}{f:if(condition:item.current, then:' current')}">
+			<f:if condition="{item.children}">
+				<f:then>
+						<f:render arguments="{item.data}" partial="Icons/Formaleicons"/>
+						<f:link.page pageUid="{item.data.uid}" target="{item.target}">
+							{item.title}
+						</f:link.page>
+					<f:render arguments="{_all}" section="submenu"/>
+				</f:then>
+				<f:else>
+					
+					<f:if condition="{item.data.subtitle} == 'loginmodal'">
+						<f:then>
+							<f:render arguments="{item.data}" partial="Icons/Formaleicons"/>
+							<a class="" data-open="loginModal">
+								{item.title}
+							</a>
+						</f:then>
+						
+						<f:else>
+							<f:render arguments="{item.data}" partial="Icons/Formaleicons"/>
+							<f:link.page pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+						</f:else>
+					</f:if>
+					
+				</f:else>
+			</f:if>
+		</li>
+	
+	<f:section name="submenu">
+		<ul class="nested vertical menu">
+			<f:if condition="{item.data.uid} == {settings.formalMenuDirectoryId}">
+				<li class="columns menu-text item-{item.data.uid}">
+					<f:link.page pageUid="56" additionalParams="{logintype:'logout'}">
+						<f:translate
+								key="LLL:EXT:muldenland/Resources/Private/Site/Language/fe_locallang.xlf:frontend.constants.logout"/>
+					</f:link.page>
+				</li>
+			</f:if>
+			
+			<f:for as="item" each="{item.children}">
+				<f:render arguments="{_all}" section="link"/>
+			</f:for>
+		</ul>
+	</f:section>
+	
+	<f:section name="link">
+		<li class="pageuid-{item.data.uid} menu-text{f:if(condition:item.active, then:' active')}{f:if(condition:item.current, then:' current')} hassubpages-{f:if(condition:item.hasSubpages, then:'yes', else: 'no')}">
+			<f:if condition="{item.children}">
+				<f:then>
+					<f:link.page class="text-uppercase" pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+					<f:render section="submenu" arguments="{_all}"/>
+				</f:then>
+				<f:else>
+					<f:link.page class="text-uppercase" pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+				</f:else>
+			</f:if>
+		</li>
+	</f:section>
+
+</f:spaceless>
+</html>

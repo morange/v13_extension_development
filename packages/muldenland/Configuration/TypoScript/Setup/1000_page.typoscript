@@ -1,0 +1,80 @@
+page = PAGE
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+	layoutRootPath = EXT:muldenland/Resources/Private/Site/Layouts/
+	partialRootPath = EXT:muldenland/Resources/Private/Site/Partials/
+
+	file.stdWrap.cObject = CASE
+	file.stdWrap.cObject {
+		key.data = pagelayout
+
+		pagets__default = TEXT
+		pagets__default.value = EXT:muldenland/Resources/Private/Site/Templates/Default.html
+
+		default < .pagets__default
+	}
+
+	variables {
+
+		HeaderImage < styles.content.get
+		HeaderImage {
+			select.where = {#colPos} = 1
+			slide = -1
+			# slide.collect = -1
+			# slide.collectReverse = 1
+		}
+
+		MainContent < styles.content.get
+
+		EuFoerderung < styles.content.get
+		EuFoerderung {
+			select.where = {#colPos} = 2
+			slide = -1
+			# slide.collect = -1
+			# slide.collectReverse = 1
+		}
+
+		Login < styles.content.get
+		Login {
+			select.where = {#colPos} = 3
+			slide = -1
+			# slide.collect = -1
+			# slide.collectReverse = 1
+		}
+	}
+
+	settings {
+		rootPageId = {$muldenland.rootPageId}
+		excludePagesMainMenu = {$muldenland.excludePagesMainMenu}
+		formalMenuDirectoryId = {$muldenland.formalMenuDirectoryId}
+		excludePagesFooterId = {$muldenland.excludePagesFooterId}
+		searchPluginId = {$muldenland.searchPluginId}
+
+		logoText = {$muldenland.logoText}
+		logoFile = {$muldenland.logoFile}
+
+		operatorHeader = {$muldenland.operatorHeader}
+		operatorFooter = {$muldenland.operatorFooter}
+		address = {$muldenland.address}
+		mobilephone = {$muldenland.mobilephone}
+		phone = {$muldenland.phone}
+
+		authorWork = {$muldenland.authorWork}
+		authorName = {$muldenland.authorName}
+		authorLink = {$muldenland.authorLink}
+
+		googlesiteverifikation = {$muldenland.googlesiteverifikation}
+
+		videoRel = {$muldenland.videoRel}
+
+		siteTitle = {$muldenland.operatorHeader}
+		devmode = false
+	}
+
+}
+
+# Anzeige des Rasters
+[applicationContext == "Development"]
+	page.10.settings.devmode = true
+[END]

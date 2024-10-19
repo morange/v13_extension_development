@@ -1,0 +1,27 @@
+imports:
+  - { resource: './BackendRoleDefinitions/acl_2cols.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_3cols.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_accordion.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_button.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_calendarize.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_categories.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_categories-news.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_divider.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_fe-user.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_icon-with-headline.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_medien.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_news.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_projectbox.yaml' }
+  - { resource: './BackendRoleDefinitions/acl_slider.yaml' }
+  #  - { resource: './BackendRoleDefinitions/acl_tt-address.yaml' }
+  
+  - { resource: './BackendRoleDefinitions/doku_be-redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/doku_db-redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/doku_fm-redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/doku_seitenrechte.yaml' }
+  
+  - { resource: './BackendRoleDefinitions/page_be-redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/page_db-redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/page_fm-redakteur.yaml' }
+  - { resource: './BackendRoleDefinitions/page_seitenrechte.yaml' }

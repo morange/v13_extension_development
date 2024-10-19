@@ -1,0 +1,57 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<figure class="image">
+	
+	<f:if condition="{file.link}">
+		<f:then>
+			<f:if condition="{template} == 1">
+				<f:then>
+					<f:comment>
+						<!--
+						 template: 1 entspricht dem Slider und darf keinen Link haben, aufgrund des Slides
+						 -->
+					</f:comment>
+					<f:render arguments="{file: file, dimensions: dimensions, settings: settings}" partial="Media/Rendering/Image"/>
+				</f:then>
+				<f:else>
+					<f:comment>
+						<!--
+						 template: 0 entspricht einem Bild und kann einen Link haben
+						 -->
+					</f:comment>
+					<f:link.typolink parameter="{file.link}" title="{file.title}">
+						<f:render arguments="{file: file, dimensions: dimensions, settings: settings}" partial="Media/Rendering/Image"/>
+					</f:link.typolink>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:if condition="{data.image_zoom}">
+				<f:then>
+					<ce:link.clickEnlarge configuration="{settings.media.popup}" image="{file}">
+						<f:render arguments="{file: file, dimensions: dimensions, settings: settings}"
+						          partial="Media/Rendering/Image"/>
+					</ce:link.clickEnlarge>
+				</f:then>
+				<f:else>
+					<f:render arguments="{file: file, dimensions: dimensions, settings: settings}"
+					          partial="Media/Rendering/Image"/>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+	<f:if condition="{file.description}">
+		<figcaption class="image-caption text-center">
+			<p>{file.description -> f:format.nl2br()}</p>
+			<div class="author text-right">
+				<f:translate
+						key="LLL:EXT:erweiterungen/ContentBlocks/ContentElements/slider/Source/Language/Labels_frontend.xlf:orbit.fotoadvice"/>&nbsp;
+				
+				<f:link.typolink parameter="{file.properties.link}">
+					{file.properties.alternative}
+				</f:link.typolink>
+			</div>
+		</figcaption>
+	</f:if>
+</figure>
+</html>

@@ -1,0 +1,33 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Projectbox
+    title: '[Role] ACL:Projectbox'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify: {  }
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:dermatthesfrauhofer_projectbox'
+    non_exclude_fields:
+      tt_content:
+        - dermatthesfrauhofer_projectbox_link
+        - dermatthesfrauhofer_projectbox_uppercase
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-03-04T10:24:37Z"
+	      product-name="muldenland">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="pagets.news.twocleavers">
+				<source>two Cleavers</source>
+			</trans-unit>
+			<trans-unit id="pagets.news.threecleavers">
+				<source>three Cleavers</source>
+			</trans-unit>
+			<trans-unit id="pagets.news.projects">
+				<source>Projects (left Image / right Teasertext</source>
+			</trans-unit>
+			<trans-unit id="pagets.news.labelRecordLinks">
+				<source>Notifications and projects (News)</source>
+			</trans-unit>
+			<trans-unit id="infinitescrolling.button.viewmore">
+				<source>View more</source>
+			</trans-unit>
+			<trans-unit id="infinitescrolling.button.endofcontent">
+				<source>End of content</source>
+			</trans-unit>
+			<trans-unit id="infinitescrolling.button.no-more-pages-to-load">
+				<source>No more pages to load</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

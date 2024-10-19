@@ -1,0 +1,16 @@
+base: /
+languages:
+  -
+    title: German
+    enabled: true
+    locale: de_DE
+    hreflang: ''
+    base: /
+    websiteTitle: ''
+    navigationTitle: Deutsch
+    fallbackType: strict
+    fallbacks: ''
+    flag: de
+    languageId: 0
+rootPageId: 1
+websiteTitle: Development

@@ -1,0 +1,48 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Slider
+    title: '[Role] ACL:Slider'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - dermatthesfrauhofer_slider_items
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:dermatthesfrauhofer_slider'
+    non_exclude_fields:
+      dermatthesfrauhofer_slider_items:
+        - bodytext
+        - editlock
+        - endtime
+        - fe_group
+        - files
+        - header
+        - hidden
+        - imageheight
+        - imagewidth
+        - link
+        - starttime
+        - subheader
+        - sys_language_uid
+      tt_content:
+        - dermatthesfrauhofer_slider_items
+        - dermatthesfrauhofer_slider_uppercase
+

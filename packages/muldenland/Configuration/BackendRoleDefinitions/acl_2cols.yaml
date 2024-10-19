@@ -1,0 +1,30 @@
+RoleDefinitions:
+  -
+    identifier: ACL:2col
+    title: '[Role] ACL:2col'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify: {  }
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:2cols'
+    non_exclude_fields: {  }
+

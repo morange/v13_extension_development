@@ -1,0 +1,38 @@
+TCEFORM.fe_users {
+	## Personal Date
+	# Company [company]
+	# company.disabled = 1
+	# Title [title]
+	# title.disabled = 1
+	# Name [name]
+	name.disabled = 1
+	# First name [first_name]
+	# first_name.disabled = 1
+	# Middle name [middle_name]
+	middle_name.disabled = 1
+	# Last name [last_name]
+	# last_name.disabled = 1
+	# Address [address]
+	address.disabled = 1
+	# Zipcode [zip]
+	zip.disabled = 1
+	# City [city]
+	city.disabled = 1
+	# Country [country]
+	country.disabled = 1
+	# Phone [telephone]
+	telephone.disabled = 1
+	# Fax [fax]
+	# fax.disabled = 1
+	# Email [email]
+	# email.disabled = 1
+	# www [www]
+	www.disabled = 1
+	# Image [image]
+	image.disabled = 1
+
+
+	## Options
+	# TSconfig [TSconfig]
+	TSconfig.disabled = 1
+}

@@ -1,0 +1,37 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Icon with Headline
+    title: '[Role] ACL:Icon with Headline'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify: {  }
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:dermatthesfrauhofer_iconwithheadline'
+    non_exclude_fields:
+      tt_content:
+        - dermatthesfrauhofer_iconwithheadline_background-color
+        - dermatthesfrauhofer_iconwithheadline_bodytext
+        - dermatthesfrauhofer_iconwithheadline_header_icon
+        - dermatthesfrauhofer_iconwithheadline_link
+        - dermatthesfrauhofer_iconwithheadline_uppercase
+        - dermatthesfrauhofer_iconwithheadline_vertical-align
+

@@ -1,0 +1,141 @@
+plugin.tx_calendarize {
+  settings {
+    dateLimitBrowserPrev = {$plugin.tx_calendarize.settings.dateLimitBrowserPrev}
+    dateLimitBrowserNext = {$plugin.tx_calendarize.settings.dateLimitBrowserNext}
+    weekStart = {$plugin.tx_calendarize.settings.weekStart}
+    useMomentJsDateAndTimeOutput = {$plugin.tx_calendarize.settings.useMomentJsDateAndTimeOutput}
+    useMomentFullCalendarIo = {$plugin.tx_calendarize.settings.useMomentFullCalendarIo}
+    listStartTime = {$plugin.tx_calendarize.settings.listStartTime}
+    listStartTimeOffsetHours = {$plugin.tx_calendarize.settings.listStartTimeOffsetHours}
+    searchEndModifier = {$plugin.tx_calendarize.settings.searchEndModifier}
+    defaultDetailPid = {$plugin.tx_calendarize.settings.defaultDetailPid}
+    shortcutLimitEvents = {$plugin.tx_calendarize.settings.shortcutLimitEvents}
+
+    paginateConfiguration {
+      itemsPerPage = 10
+      insertAbove = 0
+      insertBelow = 1
+      maximumNumberOfLinks = 10
+      addQueryStringMethod = GET
+    }
+
+    feed {
+      title = {$plugin.tx_calendarize.settings.feed.title}
+      description = {$plugin.tx_calendarize.settings.feed.description}
+      language = {$plugin.tx_calendarize.settings.feed.language}
+      debugMode = {$plugin.tx_calendarize.settings.feed.debugMode}
+    }
+  }
+
+  mvc.callDefaultActionIfActionCantBeResolved = 1
+
+  view {
+    templateRootPaths {
+      50 = EXT:calendarize/Resources/Private/Templates/
+      100 = {$plugin.tx_calendarize.view.templateRootPath}
+    }
+
+    partialRootPaths {
+      50 = EXT:calendarize/Resources/Private/Partials/
+      100 = {$plugin.tx_calendarize.view.partialRootPath}
+    }
+
+    layoutRootPaths {
+      50 = EXT:calendarize/Resources/Private/Layouts/
+      100 = {$plugin.tx_calendarize.view.layoutRootPath}
+    }
+  }
+}
+
+# Changes the namespace of the plugins so that the controller accept tx_calendarize_calendar query parameters.
+# This way we can use e.g. tx_calendarize_calendar[index] for all plugins (except booking).
+# Otherwise, the ViewHelper links to the wrong plugin or, with a undefined plugin, the detail action is ambiguous (detail, listdetail)
+# This is also consistent to previous versions of calendarize.
+plugin {
+  tx_calendarize_listdetail.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_list.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_detail.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_search.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_result.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_latest.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_single.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_year.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_quarter.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_month.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_week.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_day.view.pluginNamespace = tx_calendarize_calendar
+  tx_calendarize_past.view.pluginNamespace = tx_calendarize_calendar
+}
+
+["{$plugin.tx_calendarize.settings.useMomentJsDateAndTimeOutput}" == "1"]
+  page.includeJSFooterlibs.moment = https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js
+  page.includeJSFooterlibs.moment.external = 1
+  page.includeJSFooterlibs.moment.disableCompression = 1
+  page.includeJSFooterlibs.momentTimezone = https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone.min.js
+  page.includeJSFooterlibs.momentTimezone.external = 1
+  page.includeJSFooterlibs.momentTimezone.disableCompression = 1
+  page.includeJSFooterlibs.momentReplacement = EXT:calendarize/Resources/Public/JavaScript/MomentReplacement.js
+[global]
+
+["{$plugin.tx_calendarize.settings.useMomentFullCalendarIo}" == "1"]
+  page {
+    includeCSS {
+      fullCalendar = https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.5/main.min.css
+      fullCalendar {
+        external = 1
+        disableCompression = 1
+        forceOnTop = 1
+      }
+    }
+
+    includeJSFooter {
+      fullCalendar = https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.5/main.min.js
+      fullCalendar {
+        external = 1
+        disableCompression = 1
+        excludeFromConcatenation = 1
+      }
+      fullCalendarLanguage = https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.5/locales-all.min.js
+      fullCalendarLanguage {
+        external = 1
+        disableCompression = 1
+        excludeFromConcatenation = 1
+      }
+      calendarizeFullCalendar = EXT:calendarize/Resources/Public/JavaScript/FullCalendar.js
+      calendarizeFullCalendar {
+        excludeFromConcatenation = 1
+      }
+    }
+  }
+[global]
+
+# Rendering of calendarize, displayed by "Insert Record" content element
+tt_content.shortcut.20.tables := addToList(tx_calendarize_domain_model_event)
+tt_content.shortcut.20.conf.tx_calendarize_domain_model_event = EXTBASEPLUGIN
+tt_content.shortcut.20.conf.tx_calendarize_domain_model_event {
+  extensionName = Calendarize
+  pluginName = Shortcut
+
+  settings =< plugin.tx_calendarize.settings
+  settings {
+    hidePagination = 1
+    detailPid = {$plugin.tx_calendarize.settings.defaultDetailPid}
+  }
+}
+# For fluid_styled_content
+tt_content.shortcut.variables.shortcuts.tables := addToList(tx_calendarize_domain_model_event)
+tt_content.shortcut.variables.shortcuts.conf.tx_calendarize_domain_model_event =< tt_content.shortcut.20.conf.tx_calendarize_domain_model_event
+
+# Add you own tables
+# tt_content.shortcut.20.tables := addToList(tx_XXXXXX_domain_model_event)
+# tt_content.shortcut.20.conf.tx_XXXXX_domain_model_event =< tt_content.shortcut.20.conf.tx_calendarize_domain_model_event
+# tt_content.shortcut.variables.shortcuts.tables := addToList(tx_XXXXX_domain_model_event)
+# tt_content.shortcut.variables.shortcuts.conf.tx_XXXXXX_domain_model_event =< tt_content.shortcut.20.conf.tx_calendarize_domain_model_event
+
+# enable page title provider
+config.pageTitleProviders {
+  calendarize {
+    provider = HDNET\Calendarize\Seo\CalendarizeTitleProvider
+    before = altPageTitle,record,seo
+  }
+}

@@ -1,0 +1,70 @@
+tt_content.2cols < lib.contentElement
+tt_content.2cols {
+	templateName = 2cols
+	templateRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/container/Templates/
+	partialRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/container/Partials/
+	layoutRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/container/Layouts/
+	dataProcessing {
+		201 = B13\Container\DataProcessing\ContainerProcessor
+		201 {
+			colPos = 201
+			as = childrenLeft
+		}
+
+		202 = B13\Container\DataProcessing\ContainerProcessor
+		202 {
+			colPos = 203
+			as = childrenRight
+		}
+	}
+}
+
+tt_content.3cols < lib.contentElement
+tt_content.3cols {
+	templateName = 3cols
+	templateRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/container/Templates/
+	partialRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/container/Partials/
+	layoutRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/container/Layouts/
+	dataProcessing {
+		301 = B13\Container\DataProcessing\ContainerProcessor
+		301 {
+			colPos = 201
+			as = childrenLeft
+		}
+
+		302 = B13\Container\DataProcessing\ContainerProcessor
+		302 {
+			colPos = 202
+			as = childrenCenter
+		}
+
+		303 = B13\Container\DataProcessing\ContainerProcessor
+		303 {
+			colPos = 203
+			as = childrenRight
+		}
+	}
+}
+
+tt_content.accordion < lib.contentElement
+tt_content.accordion {
+	templateName = Accordion
+	templateRootPaths.10 = EXT:muldenland/Resources/Private/Extensions/container/Templates/
+	partialRootPaths.10 = EXT:muldenland/Resources/Private/Extensions/container/Partials/
+	layoutRootPaths.10 = EXT:muldenland/Resources/Private/Extensions/container/Layouts/
+	dataProcessing {
+		1001 = B13\Container\DataProcessing\ContainerProcessor
+		1001 {
+			colPos = 1001
+			as = children
+			dataProcessing.10 = files
+			dataProcessing.10 {
+				as = images
+				references.fieldName = image
+				references.table = tt_content
+				sorting = title
+				sorting.direction = descending
+			}
+		}
+	}
+}

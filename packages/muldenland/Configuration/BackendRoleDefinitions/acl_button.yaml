@@ -1,0 +1,34 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Button
+    title: '[Role] ACL:Button'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify: {  }
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:Button'
+    non_exclude_fields:
+      tt_content:
+        - dermatthesfrauhofer_button_backtopage
+        - dermatthesfrauhofer_button_header_mobil
+        - dermatthesfrauhofer_button_link
+

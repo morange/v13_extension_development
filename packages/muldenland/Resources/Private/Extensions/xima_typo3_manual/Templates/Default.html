@@ -1,0 +1,109 @@
+{namespace be=TYPO3\CMS\Backend\ViewHelpers}
+
+<main style="--link-color:{backendSettings.loginHighlightColor}">
+    <section class="section cover">
+        <f:if condition="{backendSettings.loginLogo}">
+            <img src="{f:uri.resource(path: backendSettings.loginLogo)}" width="300" alt="Logo"/>
+        </f:if>
+        <h1>{title}</h1>
+    </section>
+
+    <f:if condition="{context} != 'pdf'">
+        <nav class="section">
+	        <ul>
+		        <f:render arguments="{_all}" partial="Logo"/>
+	        </ul>
+            <ol>
+                <f:for each="{pages}" as="page" iteration="i">
+                    <f:render section="navigation" arguments="{page: page}"/>
+                </f:for>
+            </ol>
+        </nav>
+    </f:if>
+
+
+    <div class="section break-before show-for-print">
+        <h2 class="no-number">Inhaltsverzeichnis</h2>
+        <ol>
+            <f:for each="{pages}" as="page" iteration="i">
+                <f:render section="chapter" arguments="{page: page}"/>
+            </f:for>
+        </ol>
+    </div>
+
+
+    <f:for each="{pages}" as="page">
+        <f:render section="page" arguments="{page:page, context:context}"/>
+    </f:for>
+
+    <a href="#" class="to-top" title="To top">&#8593;</a>
+</main>
+
+
+<f:section name="chapter">
+    <li>
+        <a href="#p{page.data.uid}">{page.title}</a>
+        <f:if condition="{page.hasSubpages} || {page.chapters}">
+            <ol>
+                <f:for each="{page.chapters}" as="content">
+                    <li>
+                        <a href="#c{content.data.uid}">{content.data.header}</a>
+                    </li>
+                </f:for>
+                <f:for each="{page.children}" as="subpage">
+                    <f:render section="chapter" arguments="{page: subpage}"/>
+                </f:for>
+            </ol>
+        </f:if>
+    </li>
+</f:section>
+
+<f:section name="navigation">
+    <li>
+        <f:if condition="{page.hasSubpages} || {page.chapters}">
+            <f:then>
+                <details>
+                    <summary>
+                        <a href="#p{page.data.uid}" title="{page.title}">{page.title}</a>
+                    </summary>
+                    <f:if condition="{page.hasSubpages} || {page.chapters}">
+                        <ol>
+                            <f:for each="{page.chapters}" as="content">
+                                <li>
+                                    <a href="#c{content.data.uid}" title="{page.title}">{content.data.header}</a>
+                                </li>
+                            </f:for>
+                            <f:for each="{page.children}" as="subpage">
+                                <f:render section="navigation" arguments="{page: subpage}"/>
+                            </f:for>
+                        </ol>
+                    </f:if>
+                </details>
+            </f:then>
+            <f:else>
+                <a href="#p{page.data.uid}">{page.title}</a>
+            </f:else>
+        </f:if>
+    </li>
+</f:section>
+
+<f:section name="page">
+    <section class="{f:if(condition:noPageBreak, else: 'break-before')}">
+        <h2 id="p{page.data.uid}">
+            {page.title}
+            <f:if condition="{context} == 'frontend'">
+                <a href="#p{page.data.uid}"><core:icon identifier="actions-link" size="small"/></a>
+            </f:if>
+            <f:if condition="{context} == 'backend'">
+                <be:link.editRecord uid="{page.data.uid}" table="pages" returnUrl="" fields="title" class="edit-record">
+                    <core:icon identifier="actions-open" size="small"/>
+                </be:link.editRecord>
+            </f:if>
+        </h2>
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pid: page.data.uid, colPos: '0'}"/>
+
+        <f:for each="{page.children}" as="subpage">
+            <f:render section="page" arguments="{page:subpage, noPageBreak:'true', context:context}"/>
+        </f:for>
+    </section>
+</f:section>

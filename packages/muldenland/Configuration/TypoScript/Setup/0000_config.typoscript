@@ -1,0 +1,20 @@
+config {
+	# Enable TYPO3 Indexing
+	index_enable = 1
+	index_externals = 1
+	index_metatags = 1
+}
+[applicationContext == "Development"]
+	config {
+		# Enable TYPO3 Cache
+		no_cache = 1
+		# Admin Panel
+		admPanel = 1
+
+		# Komprimierung
+		compressCss = 0
+		concatenateCss = 0
+		compressJs = 0
+		concatenateJs = 0
+	}
+[END]

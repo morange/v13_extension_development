@@ -1,0 +1,12 @@
+sourceopt {
+	enabled = 1
+	formatHtml = 1
+}
+
+[applicationContext == "Development"]
+	sourceopt.enabled = 0
+	sourceopt.formatHtml = 4
+[END]
+
+plugin.tt_news = USER
+TCEMAIN.clearCacheCmd = {$muldenland.clearCacheCmd}

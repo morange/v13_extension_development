@@ -1,0 +1,16 @@
+
+plugin.tx_indexedsearch {
+	view {
+		partialRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/indexed_searched/Partials/
+		templateRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/indexed_searched/Templates/
+		layoutRootPaths.100 = EXT:muldenland/Resources/Private/Extensions/indexed_searched/Layouts/
+	}
+}
+
+
+lib.searchField = RECORDS
+lib.searchField {
+	tables = tt_content, news, tx_calendarize_domain_model_configuration
+	source = {$muldenland.searchPluginId}
+	dontCheckPid = {$muldenland.rootPageId}
+}

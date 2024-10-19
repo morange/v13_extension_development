@@ -1,0 +1,19 @@
+page = PAGE
+
+page {
+
+	meta {
+		viewport = width=device-width, initial-scale=1.0
+
+		# google-site-verification = {$muldenland.googlesiteverifikation}
+	}
+
+	# shortcutIcon = EXT:muldenland/Resources/Public/Icons/favicon.ico
+
+	# Favicon einbinden
+	headerData.2039 = FLUIDTEMPLATE
+	headerData.2039 {
+		file = EXT:muldenland/Resources/Private/Site/Templates/Favicons.html
+		extbase.controllerExtensionName = muldenland
+	}
+}

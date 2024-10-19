@@ -1,0 +1,73 @@
+page.10.dataProcessing {
+	## TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+	## der fullqualified Process kann seit TYPo3 v12.1 mit 'menu' abgekürzt werden
+
+	## Formales Menu
+	10 = menu
+	10 {
+		as = formalesMenu
+		special = directory
+		special.value = {$muldenland.formalMenuDirectoryId}
+		excludeUidList = {$muldenland.excludePagesFooterId}
+		levels = 3
+		titleField = title // nav_title
+	}
+
+	## Main Menu
+	20 = menu
+	20 {
+		as = mainMenu
+		expandAll = 1
+		excludeUidList = {$muldenland.excludePagesMainMenu}
+		levels = 2
+		titleField = title // nav_title
+	}
+
+	## Rootline
+	30 = menu
+	30 {
+		as = breadcrumb
+		special = rootline
+		special.range = 0|-1
+		excludeUidList = 40
+		titleField = title // nav_title
+		includeNotInMenu = 1
+	}
+
+	## Formales Menu Footer
+	40 = menu
+	40 {
+		as = formalesMenuFooter
+		special = directory
+		special.value = {$muldenland.formalMenuDirectoryId}
+		levels = 3
+		titleField = title // nav_title
+	}
+
+	## Footer Menu
+	70 = menu
+	70 {
+		as = footerMenu
+		special = directory
+		special.value = {$muldenland.excludePagesFooterId}
+		levels = 1
+		titleField = title // nav_title
+	}
+
+	## Seitentitel
+	100 = menu
+	100 {
+		as = sitetitle
+		special = rootline
+		special.range = 0|-1
+		titleField = nav_title // title
+		includeNotInMenu = 1
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				slide = -1
+				references.fieldName = media
+			}
+		}
+	}
+}

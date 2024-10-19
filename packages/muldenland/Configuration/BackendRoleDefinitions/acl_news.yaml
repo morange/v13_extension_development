@@ -1,0 +1,60 @@
+RoleDefinitions:
+  -
+    identifier: ACL:News
+    title: '[Role] ACL:News'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - tx_news_domain_model_link
+      - tx_news_domain_model_news
+      - tx_news_domain_model_tag
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:news_categorylist'
+        - 'CType:news_newsdatemenu'
+        - 'CType:news_newsdetail'
+        - 'CType:news_newsliststicky'
+        - 'CType:news_newssearchform'
+        - 'CType:news_newssearchresult'
+        - 'CType:news_newsselectedlist'
+        - 'CType:news_pi1'
+        - 'CType:news_taglist'
+    non_exclude_fields:
+      tx_news_domain_model_link:
+        - description
+        - hidden
+      tx_news_domain_model_news:
+        - alternative_title
+        - archive
+        - content_elements
+        - description
+        - endtime
+        - fal_media
+        - hidden
+        - istopnews
+        - keywords
+        - related
+        - related_from
+        - related_links
+        - sitemap_changefreq
+        - sitemap_priority
+        - starttime
+        - teaser

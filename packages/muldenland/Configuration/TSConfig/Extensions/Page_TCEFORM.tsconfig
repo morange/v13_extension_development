@@ -1,0 +1,139 @@
+TCEFORM {
+    pages {
+
+        tx_pagetreefilter.enable = 1
+
+        # Icon [tx_bwicons_icon]
+        tx_bwicons_icon.disabled = 1
+
+        # Frontend Layout [layout]
+        layout.disabled = 1
+        #Mark as 'New' Until [newUntil]
+        newUntil.disabled = 1
+
+        layout {
+            # removeItems = 2,3,4
+        }
+
+        backend_layout {
+            altLabels {
+
+            }
+
+            removeItems = 1
+        }
+    }
+
+    tt_content {
+
+        # data[tt_content][199][tx_bwicons_icon]
+        tx_bwicons_icon.disabled = 1
+
+        header_layout {
+            altLabels {
+                0 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_layout.gray
+                1 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_layout.blue
+                #3 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_layout.headline3
+                #4 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_layout.headline4
+                #5 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_layout.headline5
+            }
+
+            removeItems = 2, 3, 4, 5
+        }
+
+        header_type {
+            altLabels {
+                1 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.mainheadline
+                2 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.headline_normal
+                3 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.headline3
+                4 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.headline4
+                #5 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.header_type.headline5
+            }
+            removeItems = 5, 6
+        }
+
+        frame_class {
+            removeItems = indent, indent-left, indent-right, none, ruler-before, striped, bordered, rulee-after
+        }
+        frame_class.disabled = 1
+
+        space_before_class {
+            removeItems = extra-small, small, medium, large, extra-large
+        }
+        space_before_class.disabled = 1
+
+        space_after_class {
+            removeItems = extra-small, small, medium, large, extra-large
+        }
+        space_after_class.disabled = 1
+
+        layout {
+            removeItems = 1, 2, 3
+            addItems {
+               110 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.layout.large
+               120 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.layout.video
+            }
+        }
+
+        ## Workaround für responsive Videos in Verbindung mit fluid_styled_content default CSS
+        layout.types.textmedia {
+            addItems {
+                # 10 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.layout.responsiveVideo
+                # 20 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.layout.headlineWithLine
+                # 30 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.layout.dragTextBehind
+                # 220 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.main.layout.bottomText
+            }
+        }
+
+        imageorient.types.textmedia {
+            removeItems = 1, 2, 9, 10, 17, 18, 25, 26
+            ## addItems {
+            ## 3 = LLL:EXT:muldenland/Resources/Private/Site/Language/fluid_styled_content/locallang.xlf:pagets.mediatext.imageorientation.headlineBetweenImageAndText
+            ## 3.icon = content-beside-text-img-above-center
+            ## }
+        }
+
+        #imageorient.types.textmedia.disabled = 1
+
+        #Number of Columns [imagecols]
+        imagecols.types.textmedia.disabled = 1
+
+
+        categories.types.textmedia.disabled = 1
+
+        ## Tab Media
+        # Width of each element (px) [imagewidth]
+        #imagewidth.disabled = 1
+        # Height of each element (px) [imageheight]
+        #imageheight.disabled = 1
+        # Border around each element [imageborder]
+        imageborder.disabled = 1
+        # Autoplay [autoplay]
+        autoplay.disabled = 1
+        # Enlarge on Click [image_zoom]
+        image_zoom.disabled = 1
+
+        ## Tab Appearance
+        # Show in Section Menus [sectionIndex]
+        sectionIndex.disabled = 1
+        # Append with Link to Top of Page [linkToTop]
+        linkToTop.disabled = 1
+    }
+}
+
+## RTE Konfiguration
+# RTE.default.preset = myRtePreset
+# RTE.default.preset = default
+#RTE.config.tt_content.bodytext.types.textmedia.preset = full
+#RTE.config.tt_content.bodytext.types.text.preset = minimal
+
+TCAdefaults.tt_content {
+    # Position und Ausrichtung [imageorient]
+    imageorient = 8
+    # setze die Spalte der Bilder auf 1 Bild
+    imagecols = 1
+}
+
+dimensions {
+    width = 1024
+}

@@ -1,0 +1,7 @@
+plugin.tx_felogin_login {
+	view {
+		templateRootPaths {
+			10 = EXT:muldenland/Resources/Private/Extensions/felogin_login/Templates/
+		}
+	}
+}

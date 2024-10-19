@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-03-04T10:24:37Z"
+	      product-name="muldenland">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			## Template Constants / Links and targets
+			<trans-unit id="template.constants.rootpageId">
+				<source>RootPage ID:ID der Startseite der Website</source>
+			</trans-unit>
+			<trans-unit id="template.constants.excludedPids">
+				<source>ausgeschlossene IDs des Hauptmenüs:Geben Sie hier die ausgeschlossenen ID's des Hauptmenüs an (das sollte ein Ordner mit Unterseiten sein).</source>
+			</trans-unit>
+			<trans-unit id="template.constants.formalMenuDirectoryId">
+				<source>IDs des Formalenenüs:Geben Sie hier die ID's des formalen Menüs an.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.footerMenuDirectoryId">
+				<source>IDs des Footermenüs:Geben Sie hier die ausgeschlossenen ID's des Footermenüs an.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.excludedFooterMenuDirectoryId">
+				<source>excluded IDs des Footermenüs:Geben Sie hier die ausgeschlossenen ID's des Footermenüs an.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.searchPluginId">
+				<source>Search-Plugin ID:ID des Content-Elements auf der Suchseite</source>
+			</trans-unit>
+			<trans-unit id="template.constants.calendarize.storagePID">
+				<source>Storage PID für Calendarize</source>
+			</trans-unit>
+
+			# Template Constants / Typography
+			<trans-unit id="template.constants.logoText">
+				<source>Logo Text</source>
+			</trans-unit>
+			<trans-unit id="template.constants.logoFile">
+				<source>Wählen Sie Ihr Logo aus.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.operatorHeader">
+				<source>Name-Text für den Kopfbereich:Sofern kein Logo verwendet wird, wird dieser Text an Stelle des Logos angezeigt. Falls ein Logo verwendet wird, wird der Text für das alt- und das title-Attribut verwendet.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.operatorFooter">
+				<source>Name-Text für den Seitenabschluss:Dieser Text wird als Seitenabschluss angezeigt. Geben Sie den Namen des Betreibers an.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.address">
+				<source>Postadresse:Geben Sie hier die Postadresse des Betreibers an.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.mobilePhone">
+				<source>Mobil-Anschluss des Webseitenbetreibers: Dies ist die mobile Telefonnummer des Betreibers.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.phone">
+				<source>Festnetz Anschluss des Webseitenbetreibers: Dies ist die Festnetz Telefonnummer des Betreibers.</source>
+			</trans-unit>
+			<trans-unit id="template.constants.authorDesign">
+				<source>Autor / Layout der Seite</source>
+			</trans-unit>
+			<trans-unit id="template.constants.authorDevelopment">
+				<source>Autor / Entwickler der Seite</source>
+			</trans-unit>
+			<trans-unit id="template.constants.authorLink">
+				<source>Link zur Webseite der Autoren</source>
+			</trans-unit>
+			<trans-unit id="template.constants.googleSiteVerificationCode">
+				<source>Google Verification Code</source>
+			</trans-unit>
+
+			## Backend Layout
+			<trans-unit id="backend.Image">
+				<source>Header Image / Header Slider</source>
+			</trans-unit>
+			<trans-unit id="backend.Content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="backend.EuSponsored">
+				<source>EU Sponsor Area</source>
+			</trans-unit>
+			<trans-unit id="backend.Login">
+				<source>Login</source>
+			</trans-unit>
+
+			## Plugins
+			<trans-unit id="plugin.col.left">
+				<source>left Column</source>
+			</trans-unit>
+			<trans-unit id="plugin.col.center">
+				<source>center Column</source>
+			</trans-unit>
+			<trans-unit id="plugin.col.right">
+				<source>right Column</source>
+			</trans-unit>
+			<trans-unit id="plugin.accordion.title">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="plugin.accordion.description">
+				<source>Accordions are elements that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

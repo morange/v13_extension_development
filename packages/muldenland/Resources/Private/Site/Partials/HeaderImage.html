@@ -1,0 +1,13 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:spaceless>
+	<f:if condition="{HeaderImage}">
+		<div class="row">
+			<div class="column">
+				<div class="row">
+					{HeaderImage -> f:format.raw()}
+				</div>
+			</div>
+		</div>
+	</f:if>
+</f:spaceless>
+</html>

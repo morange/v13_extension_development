@@ -1,0 +1,45 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:spaceless>
+	<ul class="menu">
+		<f:for each="{mainMenu}" as="item">
+			<f:render section="linkLevel1" arguments="{_all}"/>
+		</f:for>
+	</ul>
+	
+	<f:section name="linkLevel1">
+		<li class="pageuid-{item.data.uid} menu-text{f:if(condition:item.active, then:' active')}{f:if(condition:item.current, then:' current')} hassubpages-{f:if(condition:item.hasSubpages, then:'yes', else: 'no')} uppercase">
+			<f:if condition="{item.children}">
+				<f:then>
+					<f:link.page class="text-uppercase" pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+					<f:render section="submenu" arguments="{_all}"/>
+				</f:then>
+				<f:else>
+					<f:link.page class="text-uppercase" pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+				</f:else>
+			</f:if>
+		</li>
+	</f:section>
+	
+	<f:section name="link">
+		<li class="pageuid-{item.data.uid} menu-text{f:if(condition:item.active, then:' active')}{f:if(condition:item.current, then:' current')} hassubpages-{f:if(condition:item.hasSubpages, then:'yes', else: 'no')}">
+			<f:if condition="{item.children}">
+				<f:then>
+					<f:link.page class="text-uppercase" pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+					<f:render section="submenu" arguments="{_all}"/>
+				</f:then>
+				<f:else>
+					<f:link.page class="text-uppercase" pageUid="{item.data.uid}" target="{item.target}">{item.title}</f:link.page>
+				</f:else>
+			</f:if>
+		</li>
+	</f:section>
+	
+	<f:section name="submenu">
+		<ul class="submenu">
+			<f:for as="item" each="{item.children}">
+				<f:render arguments="{_all}" section="link"/>
+			</f:for>
+		</ul>
+	</f:section>
+</f:spaceless>
+</html>

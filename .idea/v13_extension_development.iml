@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/public/_assets/125e7fe0094614d5ccccccfe9960edf4" />
+      <excludeFolder url="file://$MODULE_DIR$/public/_assets/a3cd3df4e75457245f79b81b60121300" />
+      <excludeFolder url="file://$MODULE_DIR$/public/_assets/cc6f19ab970c785a428e4f021d00990e" />
+      <excludeFolder url="file://$MODULE_DIR$/public/_assets/f6ef6adaf5c92bf687a31a3adbcb0f7b" />
+      <excludeFolder url="file://$MODULE_DIR$/public/_assets/f79e13953adfa582548a7f59f7e4a73a" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,71 @@
+{namespace c=HDNET\Calendarize\ViewHelpers}
+
+<f:alias map="{event: index.originalObject}">
+	<div class="panel panel-default state-{index.state}">
+		<div class="panel-body">
+			
+			<div class="media calendarize-item">
+				
+				<div class="media-body">
+					
+					<f:comment>
+						template = 0 // meint, wir befinden uns in der dreispaltigen Seitenansicht
+						template = 1 // meint, wir befinden uns in der langen Liste der Termine
+					</f:comment>
+					<h3 class="{f:if(condition: '{template} == 0', then: 'text-center')}">
+						<f:render arguments="{index: index}" partial="{index.configuration.partialIdentifier}/Title"/>
+						<f:comment>
+							<f:if condition='{settings.detailPid}'>
+								<f:then>
+									<c:link.index index="{index}">
+										<f:render arguments="{index: index}" partial="{index.configuration.partialIdentifier}/Title"/>
+									</c:link.index>
+								</f:then>
+								<f:else>
+									<f:render arguments="{index: index}" partial="{index.configuration.partialIdentifier}/Title"/>
+								</f:else>
+							</f:if>
+						</f:comment>
+					</h3>
+					
+					<h4 class="{f:if(condition: '{template} == 0', then: 'text-center')}">
+						<f:if condition="{index.state}=='canceled'">
+							<f:then>
+								<f:translate key="canceled"/>
+							</f:then>
+							<f:else>
+								<f:render arguments="{index: index}" partial="DateInformation"/>
+							</f:else>
+						</f:if>
+					</h4>
+					<f:if condition="{event.location}">
+						<p class="location{f:if(condition: '{template} == 0', then: ' text-center')}">
+							{event.location}
+						</p>
+					</f:if>
+					
+					<f:comment>
+						template = 0 // meint, wir befinden uns in der dreispaltigen Seitenansicht
+						template = 1 // meint, wir befinden uns in der langen Liste der Termine
+					</f:comment>
+					<f:if condition="{template} == 0">
+						<f:then>
+							<div class="abstract text-uppercase{f:if(condition: '{template} == 0', then: ' text-center')}">
+								<p><f:format.nl2br>{event.abstract}</f:format.nl2br></p>
+							</div>
+						</f:then>
+						<f:else>
+							<div class="abstract text-uppercase{f:if(condition: '{template} == 0', then: ' text-center')}">
+								<p><f:format.nl2br>{event.abstract}</f:format.nl2br></p>
+							</div>
+							<div class="description">
+								{event.description -> f:format.raw()}
+							</div>
+						</f:else>
+					</f:if>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</f:alias>

@@ -1,0 +1,15 @@
+plugin.tx_bwfocuspointimages {
+	view {
+		templateRootPaths {
+			100 = EXT:muldenland/Resources/Private/Extensions/bw-focuspoint-images/Templates/
+		}
+
+		partialRootPaths {
+			100 = EXT:muldenland/Resources/Private/Extensions/bw-focuspoint-images/Partials/
+		}
+
+		layoutRootPaths {
+			100 = EXT:muldenland/Resources/Private/Extensions/bw-focuspoint-images/Layouts/
+		}
+	}
+}

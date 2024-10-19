@@ -1,0 +1,3 @@
+mod.web_list.allowedNewTables := addToList(tx_calendarize_domain_model_configuration, tx_calendarize_domain_model_configurationgroup, tx_calendarize_domain_model_event, tx_calendarize_domain_model_index, tx_calendarize_domain_model_pluginconfiguration)
+
+mod.web_list.deniedNewTables := addToList(sys_category)

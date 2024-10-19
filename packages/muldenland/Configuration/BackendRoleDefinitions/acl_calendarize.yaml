@@ -1,0 +1,111 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Calendarize
+    title: '[Role] ACL:Calendarize'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - tx_calendarize_domain_model_configuration
+      - tx_calendarize_domain_model_configurationgroup
+      - tx_calendarize_domain_model_event
+      - tx_calendarize_domain_model_index
+      - tx_calendarize_domain_model_pluginconfiguration
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny:
+      tt_content:
+        - 'CType:list'
+        - 'list_type:calendarize_booking'
+        - 'list_type:calendarize_day'
+        - 'list_type:calendarize_detail'
+        - 'list_type:calendarize_latest'
+        - 'list_type:calendarize_list'
+        - 'list_type:calendarize_listdetail'
+        - 'list_type:calendarize_month'
+        - 'list_type:calendarize_past'
+        - 'list_type:calendarize_quarter'
+        - 'list_type:calendarize_result'
+        - 'list_type:calendarize_search'
+        - 'list_type:calendarize_single'
+        - 'list_type:calendarize_week'
+        - 'list_type:calendarize_year'
+    non_exclude_fields:
+      pages:
+        - module
+      tt_content:
+        pi_flexform:
+          felogin_login:
+            sDEF:
+              - settings.pages
+      tx_calendarize_domain_model_configuration:
+        - counter_amount
+        - counter_interval
+        - day
+        - editlock
+        - endtime
+        - external_ics_url
+        - fe_group
+        - frequency
+        - groups
+        - hidden
+        - import_id
+        - recurrence
+        - starttime
+        - till_date
+        - till_days
+        - till_days_past
+        - till_days_relative
+      tx_calendarize_domain_model_configurationgroup:
+        - editlock
+        - endtime
+        - fe_group
+        - hidden
+        - import_id
+        - starttime
+      tx_calendarize_domain_model_event:
+        - downloads
+        - editlock
+        - endtime
+        - fe_group
+        - hidden
+        - images
+        - location
+        - location_link
+        - organizer
+        - organizer_link
+        - starttime
+      tx_calendarize_domain_model_pluginconfiguration:
+        - booking_pid
+        - configuration
+        - day_pid
+        - detail_pid
+        - editlock
+        - endtime
+        - fe_group
+        - hidden
+        - list_pid
+        - model_name
+        - month_pid
+        - quarter_pid
+        - recursive
+        - starttime
+        - storage_pid
+        - title
+        - week_pid
+        - year_pid

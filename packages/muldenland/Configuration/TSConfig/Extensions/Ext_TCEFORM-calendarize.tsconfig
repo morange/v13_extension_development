@@ -1,0 +1,159 @@
+# data[tt_content][41][pi_flexform][data][general][lDEF][persistence.storagePid][vDEF]
+plugin.tx_calendarize.persistence.storagePid = 44
+
+TCEFORM {
+	# Content Formatierungen
+	tt_content {
+		pi_flexform {
+			calendarize_list {
+				## TAB Main Configuration
+				main {
+					# Plugin Configuration [settings.pluginConfiguration]
+					settings\.pluginConfiguration.disabled = 1
+
+					# Ablageort der Calendarize Datensätze
+					persistence.storagePid = {$muldenland.calendarize.storagePID}
+				}
+
+				## TAB General Configuration
+				general {
+					# Category mode
+					settings\.categoryConjunction.disabled = 1
+					# Sort by [settings.sortBy]
+					# settings\.sortBy.disabled = 1
+					# Sorting [settings.sorting]
+					# settings\.sorting.disabled = 1
+					# Startingpoint [persistence.storagePid]
+					# persistence\.storagePid = 44
+				}
+
+				## TAB Page ID Configuration
+				pages {
+					# Detail PID
+					settings\.detailPid.disabled = 1
+					# List PID
+					settings\.listPid.disabled = 1
+					# Year PID
+					settings\.yearPid.disabled = 1
+					# Quarter quarterPid
+					settings\.quarterPid.disabled = 1
+					# Month PID
+					settings\.monthPid.disabled = 1
+					# Week PID
+					settings\.weekPid.disabled = 1
+					# Day PID
+					settings\.dayPid.disabled = 1
+					# Detail bookingPid
+					settings\.bookingPid.disabled = 1
+				}
+			}
+
+			calendarize_latest {
+				## TAB Main Configuration
+				main {
+					# Plugin Configuration [settings.pluginConfiguration]
+					settings\.pluginConfiguration.disabled = 1
+				}
+
+				## TAB General Configuration
+				general {
+					# Category mode
+					settings\.categoryConjunction.disabled = 1
+					# Sort by [settings.sortBy]
+					# settings\.sortBy.disabled = 1
+					# Sorting [settings.sorting]
+					# settings\.sorting.disabled = 1
+					# Startingpoint [persistence.storagePid]
+					# persistence\.storagePid = 44
+				}
+
+				## TAB Page ID Configuration
+				pages {
+					# Detail PID
+					settings\.detailPid.disabled = 1
+					# List PID
+					settings\.listPid.disabled = 1
+					# Year PID
+					settings\.yearPid.disabled = 1
+					# Quarter quarterPid
+					settings\.quarterPid.disabled = 1
+					# Month PID
+					settings\.monthPid.disabled = 1
+					# Week PID
+					settings\.weekPid.disabled = 1
+					# Day PID
+					settings\.dayPid.disabled = 1
+					# Detail bookingPid
+					settings\.bookingPid.disabled = 1
+				}
+			}
+
+			calendarize_detail {
+				## TAB Main Configuration
+				main {
+					# Plugin Configuration [settings.pluginConfiguration]
+					settings\.pluginConfiguration.disabled = 1
+				}
+
+				## TAB General Configuration
+				general {
+					# Category mode
+					# settings\.categoryConjunction.disabled = 1
+					# Sort by [settings.sortBy]
+					# settings\.sortBy.disabled = 1
+					# Sorting [settings.sorting]
+					# settings\.sorting.disabled = 1
+					# Startingpoint [persistence.storagePid]
+					# persistence\.storagePid = 44
+				}
+
+				## TAB Page ID Configuration
+				pages {
+					# Detail PID
+					#settings\.detailPid.disabled = 1
+					# List PID
+					#settings\.listPid.disabled = 1
+					# Year PID
+					settings\.yearPid.disabled = 1
+					# Quarter quarterPid
+					settings\.quarterPid.disabled = 1
+					# Month PID
+					settings\.monthPid.disabled = 1
+					# Week PID
+					settings\.weekPid.disabled = 1
+					# Day PID
+					settings\.dayPid.disabled = 1
+					# Detail bookingPid
+					settings\.bookingPid.disabled = 1
+				}
+			}
+		}
+
+		# disable Language
+		sys_language_uid.disabled = 1
+
+		# disable Categories
+		categories.disabled = 1
+
+		# layout
+		layout {
+			types.list {
+				# removeItems = 1, 2, 3
+				addItems {
+					# 100 = Box mit Schatten
+				}
+			}
+		}
+	}
+
+	tx_calendarize_domain_model_event {
+		#  Images [images]
+		images.disabled = 1
+		# Downloads [downloads]
+		downloads.disabled = 1
+		# disable Categories
+		categories.disabled = 1
+		# Language [sys_language_uid]
+		# sys_language_uid.disabled = 1
+	}
+}

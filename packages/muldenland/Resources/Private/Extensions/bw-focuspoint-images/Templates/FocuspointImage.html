@@ -1,0 +1,73 @@
+<f:asset.script identifier="my-focuspoint-js"
+                src="EXT:muldenland/Resources/Public/JavaScript/Bw-focuspoint-images/Focuspoint.js"/>
+<f:asset.css href="EXT:muldenland/Resources/Public/Css/Bw-focuspoint-images/focuspoint.css"
+             identifier="my-focuspoint-css"/>
+<div class="row">
+	<div
+			class="columns small-12 medium-12 large-12 frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+			id="c{data.uid}">
+		
+		<f:render partial="Header/All" arguments="{_all}" />
+		
+		<div class="focuspoint" style="width:{image.properties.width}px">
+			
+			<f:if condition="{image}">
+				<f:image image="{image}"/>
+			</f:if>
+			
+			<f:if condition="{points.0.title}">
+				<svg class="focuspoint__svg" xmlns="http://www.w3.org/2000/svg">
+					<f:for as="point" each="{points}" iteration="i">
+						<f:if condition="{point.link}">
+							<a target="{point.linkTarget}" xlink:href="{f:uri.typolink(parameter: point.link)}">
+						</f:if>
+						<rect class="focuspoint__svg__rect"
+						      fill="{point.color}"
+						      height="{point.height}%"
+						      id="focuspoint-{image.uid}-{i.cycle}"
+						      opacity="0.7"
+						      stroke="{point.color}"
+						      stroke-width="2px"
+						      width="{point.width}%"
+						      x="{point.x}%"
+						      y="{point.y}%"
+						      style="cursor:pointer;"
+									/>
+						<f:if condition="{point.link}">
+							</a>
+						</f:if>
+						<text alignment-baseline="middle" fill="#FFF" text-anchor="middle" x="{point.textX}%" y="{point.textY}%">
+							<f:if condition="{point.name}">
+								<f:then>
+									{point.name}
+								</f:then>
+								<f:else>
+									{point.title}
+								</f:else>
+							</f:if>
+						</text>
+					</f:for>
+			</svg>
+			</f:if>
+			
+				<f:for as="point" each="{points}" iteration="i">
+					<div class="focuspoint__description" id="focuspoint-{image.uid}-{i.cycle}-description">
+						<h3>{point.name}</h3>
+						<p>
+							<f:format.nl2br>{point.description}</f:format.nl2br>
+						</p>
+					</div>
+				</f:for>
+			
+			
+			<f:if condition="{data.bodytext}">
+				<div class="ce-textpic">
+					<div class="ce-bodytext">
+						<f:format.html>{data.bodytext}</f:format.html>
+					</div>
+				</div>
+			</f:if>
+		
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+page = PAGE
+
+page {
+	includeCSS {
+		foundation-css = EXT:muldenland/Resources/Public/Css/Foundation-sites/foundation.min.css
+		main-css = EXT:muldenland/Resources/Public/Css/main.css
+	}
+
+	includeJS {
+		# modernizr-js = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/modernizr.js
+	}
+
+	includeJSFooter {
+		jquery-js = EXT:muldenland/Resources/Public/JavaScript/Jquery/jquery.min.js
+		what-input-js = EXT:muldenland/Resources/Public/JavaScript/What-input/what-input.min.js
+		foundation-js-bundle = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/foundation.min.js
+
+		# toogler
+		# foundation-core = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.core.min.js
+		# foundation-toggler = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.util.motion.min.js
+		# foundation-triggers = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.util.triggers.min.js
+
+		# fixed Navigation
+		#    foundation-core = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.core.min.js
+		#    foundation-sticky = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.sticky.min.js
+		#    foundation-triggers = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.util.triggers.min.js
+		#    foundation-mediaQuery = EXT:muldenland/Resources/Public/JavaScript/Foundation-sites/plugins/foundation.util.mediaQuery.min.js
+
+
+		main-js = EXT:muldenland/Resources/Public/JavaScript/main.js
+		error-message-js = EXT:muldenland/Resources/Public/JavaScript/overlay-error.js
+	}
+}

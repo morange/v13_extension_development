@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext"
+	      original="EXT:mytemplate/Resources/Private/Language/fluid_styled_content/locallang.xlf"
+	      date="2021-10-18T12:14:18Z" product-name="mypackage">
+		<header/>
+		<body>
+
+			### Backend Layout ###
+			<trans-unit id="backend.HeaderImage" resname="backend.HeaderImage">
+				<source>HeaderImage</source>
+				<target>HeaderImage</target>
+			</trans-unit>
+			<trans-unit id="backend.Content" resname="backend.Content">
+				<source>Content</source>
+				<target>Content</target>
+			</trans-unit>
+			<trans-unit id="backend.CallToAction" resname="backend.CallToAction">
+				<source>CallToAction</source>
+				<target>CallToAction</target>
+			</trans-unit>
+			<trans-unit id="backend.Map" resname="backend.Map">
+				<source>Map</source>
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="backend.Form" resname="backend.Form">
+				<source>Form</source>
+				<target>Formular</target>
+			</trans-unit>
+			<trans-unit id="backend.CallToAction" resname="backend.CallToAction">
+				<source>CallToAction</source>
+				<target>CallToAction</target>
+			</trans-unit>
+			<trans-unit id="backend.Footer" resname="backend.Footer">
+				<source>Footer</source>
+				<target>Footer</target>
+			</trans-unit>
+			<trans-unit id="backend.Footerdescription" resname="backend.Footerdescription">
+				<source>The content is inherited by all sub-pages as long as no other content element is filed!</source>
+				<target>Der Inhalt vererbt sich auf alle Unterseiten, so lange kein anderes Content-Element abgelegt
+					wird!
+				</target>
+			</trans-unit>
+			<trans-unit id="backend.Socialmedia" resname="backend.Socialmedia">
+				<source>SocialMedia</source>
+				<target>SocialMedia</target>
+			</trans-unit>
+
+			## Page TSConfig
+			<trans-unit id="pagets.main.header_layout.blue"
+			            resname="pagets.main.header_layout.blue">
+				<source>blue Headline</source>
+				<target>blaue Überschrift</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_layout.gray"
+			            resname="pagets.main.header_layout.gray">
+				<source>gray Headline</source>
+				<target>graue Überschrift</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.headline_normal"
+			            resname="pagets.main.header_type.headline_normal">
+				<source>H2 - Standard</source>
+				<target>H2 - Standard</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.mainheadline" resname="pagets.main.header_type.mainheadline">
+				<source>H1 - main Headline max. 1 per page</source>
+				<target>H1 - Hauptüberschrift max. 1 je Seite</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.headline3"
+			            resname="pagets.main.header_type.header_layout.headline3">
+				<source>H3 - Headline 3. Order</source>
+				<target>H3 - Überschrift 3. Orderung</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.headline4" resname="pagets.main.header_type.headline4">
+				<source>H4 - Headline 4. Order</source>
+				<target>H4 - Überschrift 4. Orderung</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.headline5" resname="pagets.main.header_type.headline5">
+				<source>H5 - Headline 5. Order</source>
+				<target>H5 - Überschrift 5. Orderung</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.headline6" resname="pagets.main.header_type.headline6">
+				<source>H6 - Headline 6. Order</source>
+				<target>H6 - Überschrift 6. Orderung</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.header_type.paragraph" resname="pagets.main.header_type.paragraph">
+				<source>Paragraph</source>
+				<source>Absatz</source>
+			</trans-unit>
+			<trans-unit id="pagets.main.layout.responsiveVideo" resname="pagets.main.layout.responsiveVideo">
+				<source>Responsive Video</source>
+				<target>Responsive Video</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.layout.headlineWithLine" resname="pagets.main.layout.headlineWithLine">
+				<source>Headline with Line (Footer)</source>
+				<target>Überschrift mit Linie darunter (Footer)</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.layout.largeImages" resname="pagets.main.layout.largeImages">
+				<source>large Images</source>
+				<target>große Bilder</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.layout.bottomText" resname="pagets.main.layout.bottomText">
+				<source>Alignment text below</source>
+				<target>Textausrichtung unten</target>
+			</trans-unit>
+			<trans-unit id="pagets.main.layout.distanceToHeadline" resname="pagets.main.layout.distanceToHeadline">
+				<source>Distance headline to the box (plugins)</source>
+				<source>Abstand zwischen Überschrift und Box (Plugins)</source>
+			</trans-unit>
+			<trans-unit id="pagets.main.layout.dragTextBehind" resname="pagets.main.layout.dragTextBehind">
+				<source>Drag text behind</source>
+				<source>Text dahinter ziehen</source>
+			</trans-unit>
+
+			## Frontend
+			<trans-unit id="menu" resname="menu">
+				<source>Menu</source>
+				<target>MenÜ</target>
+			</trans-unit>
+			<trans-unit id="content.download" resname="content.download">
+				<source>Download</source>
+				<target>Download</target>
+			</trans-unit>
+
+			## General
+			<trans-unit id="main.content.label" resname="main.content.label">
+				<source>Jump to the main region of the page</source>
+				<target>Hauptregion der Seite anspringen</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

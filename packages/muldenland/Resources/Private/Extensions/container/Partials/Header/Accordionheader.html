@@ -1,0 +1,93 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:switch expression="{child.header_layout}">
+    <f:case value="1">
+        <h1 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+
+        </h1>
+    </f:case>
+
+    <f:case value="2">
+        <h2 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+        </h2>
+    </f:case>
+
+    <f:case value="3">
+        <h3 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+
+        </h3>
+    </f:case>
+
+    <f:case value="4">
+        <h4 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+
+        </h4>
+    </f:case>
+
+    <f:case value="5">
+        <h5 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+
+        </h5>
+    </f:case>
+
+    <f:case value="6">
+        <h6 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+
+        </h6>
+    </f:case>
+
+    <f:case value="100">
+        <f:comment> -- do not show header --</f:comment>
+    </f:case>
+    <f:defaultCase>
+        <h1 href="#deeplink{child.uid}" class="ce-headline-{f:if(condition: '{child.header_layout}', then:
+                                '{child.header_layout}', else: 'left')}" data-accordion-item>
+            {child.header -> f:format.raw()}
+
+            <f:if condition="child.subheader">
+                <f:render section="subheader" arguments="{_all}"/>
+            </f:if>
+        </h1>
+    </f:defaultCase>
+</f:switch>
+
+<f:section name="subheader">
+    <span class="subheader">{child.subheader -> f:format.raw()}</span>
+</f:section>
+</html>

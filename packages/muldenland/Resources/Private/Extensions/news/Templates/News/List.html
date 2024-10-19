@@ -1,0 +1,88 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
+<f:layout name="General"/>
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	
+	<f:if condition="{settings.hidePagination}">
+		<f:then></f:then>
+		<f:else>
+			<f:asset.script identifier="sitepackage-newslist-infinitescroll"
+			                src="EXT:muldenland/Resources/Public/JavaScript/Infinitescrolling/infinite-scroll.pkgd.min.js"/>
+			<f:asset.script identifier="sitepackage-newslist-main" src="EXT:muldenland/Resources/Public/JavaScript/Infinitescrolling/infinitescrolling.js" />
+		</f:else>
+	</f:if>
+	
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<div class="news-list-view " id="news-container-{contentObjectData.uid}">
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<div class="articles grid-x grid-margin-x">
+							<f:for as="newsItem" each="{news}" iteration="iterator">
+								<f:render arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" partial="List/Item"/>
+							</f:for>
+						</div>
+					</f:then>
+					<f:else>
+						<f:if condition="{settings.list.paginate.insertAbove}">
+							<f:render arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"
+							          partial="List/Pagination"/>
+						</f:if>
+						<div class="articles grid-x grid-margin-x" data-infinite-scroll='{ "path": ".f3-widget-paginator .next a", "append": ".article", "hideNav": ".f3-widget-paginator"}'>
+							<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							</f:for>
+						</div>
+						<f:if condition="{settings.list.paginate.insertBelow}">
+							<f:render arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"
+							          partial="List/Pagination"/>
+						</f:if>
+							<div class="page-load-status">
+								<div class="loader-ellips infinite-scroll-request">
+									<span class="loader-ellips__dot"></span>
+									<span class="loader-ellips__dot"></span>
+									<span class="loader-ellips__dot"></span>
+									<span class="loader-ellips__dot"></span>
+								</div>
+								<p class="infinite-scroll-last">
+									<f:translate
+											key="LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:infinitescrolling.button.endofcontent"/>
+									</p>
+								<p class="infinite-scroll-error">
+									<f:translate
+											key="LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:infinitescrolling.button.no-more-pages-to-load"/>
+								</p>
+							</div>
+					</f:else>
+				</f:if>
+			</div>
+			<f:if condition="{settings.templateLayout} != 3">
+
+				<f:comment>
+				<div
+						class="columns text-center small-12 medium-12 large-12 frame frame-{data.frame_class} frame-type-{data.CType} {f:if(condition: data.layout, then: ' frame-layout-{data.layout}', else: 'frame-layout-0')}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+						id="c{data.uid}">
+					<button class="button view-more-button">
+						<f:translate
+								key="LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:infinitescrolling.button.viewmore"/> +
+					</button>
+				</div>
+				</f:comment>
+			</f:if>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="list_nonewsfound"/>
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

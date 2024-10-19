@@ -1,0 +1,91 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:spaceless>
+	<div
+			class="article {f:if(condition: '{settings.templateLayout} == 4', then: 'template-projects')}  articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
+			itemscope="itemscope" itemtype="https://schema.org/Article">
+		
+		<!-- header -->
+		<div class="header cell small-12 middle-12 large-12">
+			<h3>
+				<span itemprop="headline">{newsItem.title}</span>
+				<f:comment>
+					<!--
+					<n:link additionalAttributes="{itemprop:'url'}" newsItem="{newsItem}" settings="{settings}"
+					        title="{newsItem.title}">
+						<span itemprop="headline">{newsItem.title}</span>
+					</n:link>
+					-->
+				</f:comment>
+			</h3>
+		</div>
+		
+		<div class="panel-body grid-x grid-margin-x" data-equalize-on="medium" data-equalizer id="test-eq">
+			<n:excludeDisplayedNews newsItem="{newsItem}"/>
+			
+			<f:if condition="{newsItem.mediaPreviews}">
+				<!-- media preview element -->
+				<div
+						class="news-img-wrap cell {f:if(condition: '{newsItem.mediaPreviews}', then: 'small-12 middle-6 large-6', else: 'small-12 middle-12 large-12')}">
+					<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+						<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+							<f:if condition="{mediaElement.originalResource.type} == 2">
+								<picture>
+									<source media="(min-width: 500px)"
+									        srcset="{f:uri.image(image: mediaElement, width: '600', cropVariant: 'medium')}">
+									<source srcset="{f:uri.image(image: mediaElement, width: '480', cropVariant: 'small')}">
+									<f:media alt="{mediaElement.alternative}" class="image-embed-item img-fluid" cropVariant="desktop"
+									         file="{mediaElement}"
+									         loading="{settings.media.lazyLoading}" title="{mediaElement.title}" width="{dimensions.width}"/>
+								</picture>
+							</f:if>
+							<f:if condition="{mediaElement.originalResource.type} == 4">
+								<f:render arguments="{mediaElement: mediaElement}" partial="Detail/MediaVideo"/>
+							</f:if>
+							<f:if condition="{mediaElement.originalResource.type} == 5">
+								<picture>
+									<source media="(min-width: 500px)"
+									        srcset="{f:uri.image(image: mediaElement, width: '600', cropVariant: 'medium')}">
+									<source srcset="{f:uri.image(image: mediaElement, width: '480', cropVariant: 'small')}">
+									<f:media alt="{mediaElement.alternative}" class="image-embed-item img-fluid" cropVariant="desktop"
+									         file="{mediaElement}"
+									         loading="{settings.media.lazyLoading}" title="{mediaElement.title}" width="{dimensions.width}"/>
+								</picture>
+							</f:if>
+						</f:alias>
+					</n:link>
+				</div>
+			</f:if>
+			
+			<div
+					class="news-text-wrap cell background-color-2 {f:if(condition: '{newsItem.mediaPreviews}', then: 'small-12 middle-6 large-6', else: 'small-12 middle-12 large-12')}">
+				
+				<!-- teaser -->
+				<div class="columns teaser-text read-more grid-x grid-margin-x">
+					<n:removeMediaTags>
+						<f:if condition="{newsItem.teaser}">
+							<f:then>
+								<div class="description" itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters:
+									'{settings.cropMaxCharacters}', respectWordBoundaries:'0') -> f:format.html()}
+								</div>
+							</f:then>
+							<f:else>
+								<div class="description" itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters:
+									'{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+								</div>
+							</f:else>
+						</f:if>
+					</n:removeMediaTags>
+					
+					<n:link class="hide-for-small-only read-more-link" newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+						<f:translate key="more-link"/>
+						➝
+					</n:link>
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+</f:spaceless>
+</html>

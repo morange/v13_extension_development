@@ -1,0 +1,67 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Medien
+    title: '[Role] ACL:Medien'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify: {  }
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny: {  }
+    non_exclude_fields:
+      sys_file_collection:
+        - endtime
+        - hidden
+        - starttime
+      sys_file_metadata:
+        - caption
+        - color_space
+        - content_creation_date
+        - content_modification_date
+        - copyright
+        - creator
+        - creator_tool
+        - download_name
+        - duration
+        - keywords
+        - language
+        - latitude
+        - location_city
+        - location_country
+        - location_region
+        - longitude
+        - note
+        - pages
+        - publisher
+        - ranking
+        - source
+        - status
+        - title
+        - unit
+        - visible
+      sys_file_reference:
+        - alternative
+        - autoplay
+        - crop
+        - description
+        - link
+        - showinpreview
+        - sync_crop_area
+        - title
+

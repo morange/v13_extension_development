@@ -1,0 +1,65 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:spaceless>
+	<nav class="row expanded">
+		<div class="columns megamenu-group DisclosureNav">
+			
+			<div class="title-bar">
+				<button aria-label="Menu" class="menu-icon dark" data-toggle="megamenu" tabindex="0" type="button">
+					<!-- Menu is closed -->
+					<svg class="normal is-closed" height="70.001" viewBox="0 0 70 70.001" width="70"
+					     xmlns="http://www.w3.org/2000/svg">
+						<rect class="cls-1" height="10" width="10" x="30" y="10"/>
+						<rect class="cls-1" height="10" width="10" x="30" y="30"/>
+						<rect class="cls-1" height="10" width="10" x="50" y="30"/>
+						<rect class="cls-1" height="10" width="10" x="50" y="10"/>
+						<rect class="cls-1" height="10" width="10" x="30" y="50"/>
+						<rect class="cls-1" height="10" width="10" x="50" y="50"/>
+						<rect class="cls-1" height="10" width="10" x="10" y="50"/>
+						<rect class="cls-1" height="10" width="10" x="10" y="30"/>
+						<rect class="cls-1" height="10" width="10" x="10" y="10"/>
+						<path class="cls-2"
+						      d="M70,70H0V0h70v70ZM50,50v10h10v-10h-10ZM30,50v10h10v-10h-10ZM10,50v10h10v-10h-10ZM50,30v10h10v-10h-10ZM30,30v10h10v-10h-10ZM10,30v10h10v-10h-10ZM50,10v10h10v-10h-10ZM30,10v10h10v-10h-10ZM10,10v10h10v-10h-10Z"
+						      id="menu"/>
+					</svg>
+					
+					<!-- Menu is open -->
+					<svg class="hidden is-open" height="70.001" viewBox="0 0 70 70.001" width="70"
+					     xmlns="http://www.w3.org/2000/svg">
+						<path class="cls-2" d="M70,70H0V0h70v70ZM50,30v10h10v-10h-10ZM30,30v10h10v-10h-10ZM10,30v10h10v-10h-10Z"
+						      id="menu-is-active"/>
+						<rect class="cls-1" height="10" width="10" x="30" y="30"/>
+						<rect class="cls-1" height="10" width="10" x="50" y="30"/>
+						<rect class="cls-1" height="10" width="10" x="10" y="30"/>
+					</svg>
+				</button>
+				<span>
+					<f:translate
+							key="LLL:EXT:muldenland/Resources/Private/Site/Language/fe_locallang.xlf:frontend.menu"/>
+				</span>
+			</div>
+			
+			<div class="top-bar" data-toggler="is-active" id="megamenu">
+				<div class="top-bar-left">
+					<f:render arguments="{_all}" partial="Navigation"/>
+					<ul class="horizontal menu accordion-menu menu-formal hide-for-xxlarge" >
+						<f:for as="item" each="{formalesMenu}">
+							<f:render arguments="{_all}" partial="Formalnavigation"/>
+						</f:for>
+					</ul>
+					
+					<f:comment><!--
+					<div class="top-bar-right columns menu-formal hide-for-xxlarge">
+						<ul class="row horizontal menu accordion-menu row" >
+							<f:for as="item" each="{formalesMenu}">
+								<f:render arguments="{_all}" partial="Formalnavigation"/>
+							</f:for>
+						</ul>
+					</div>
+					--></f:comment>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- End Top Bar -->
+</f:spaceless>
+</html>

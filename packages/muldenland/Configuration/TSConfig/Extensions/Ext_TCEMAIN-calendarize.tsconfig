@@ -1,0 +1,3 @@
+TCEMAIN.linkHandler.tx_calendarize_domain_model_event {
+	label = LLL:EXT:muldenland/Resources/Private/Site/Language/calendarize/locallang.xlf:pagets.calendarize.labelRecordLinks
+}

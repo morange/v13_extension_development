@@ -1,0 +1,45 @@
+TCEFORM {
+	# User Config
+	fe_users {
+		# Redirect at Login to Page (felogin) [felogin_redirectPid]
+		felogin_redirectPid.disabled = 1
+		# TSconfig [TSconfig]
+		TSconfig.disabled = 1
+		# Record Type [tx_extbase_type]
+		tx_extbase_type.disabled = 1
+	}
+
+	fe_groups {
+		# TSconfig [TSconfig]
+		TSConfig.disabled = 1
+		# Record Type [tx_extbase_type]
+		tx_extbase_type.disabled = 1
+	}
+
+	# Config Plugin
+	tt_content.pi_flexform {
+		felogin_login {
+			sDEF {
+				# Display Password Recovery Link [settings.showForgotPassword]
+				settings\.showForgotPassword.disabled = 1
+				# Display Remember Login Option [settings.showPermaLogin]
+				settings\.showPermaLogin.disabled = 1
+				# Disable redirect after successful login, but display logout-form [settings.showLogoutFormAfterLogin]
+				settings\.showLogoutFormAfterLogin.disabled = 1
+				# User Storage Page [settings.pages]
+				settings\.pages.disabled = 1
+				#Recursive [settings.recursive]
+				settings\.recursive.disabled = 1
+			}
+
+			s_redirect {
+				# Use First Supported Mode from Selection [settings.redirectFirstMethod]
+				settings\.redirectFirstMethod.disabled = 1
+				# Disable Redirect [settings.redirectDisable]
+				settings\.redirectDisable.disabled = 1
+			}
+		}
+		# data[tt_content][133][pi_flexform][data][s_redirect][lDEF][settings.redirectDisable][vDEF]
+	}
+
+}

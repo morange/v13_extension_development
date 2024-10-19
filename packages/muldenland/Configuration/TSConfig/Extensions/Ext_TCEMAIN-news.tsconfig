@@ -1,0 +1,33 @@
+TCEMAIN {
+	// Preview Button for News
+	preview {
+		tx_news_domain_model_news {
+			previewPageId = 2
+			useDefaultLanguageRecord = 0
+			fieldToParameterMap {
+				uid = tx_news_pi1[news_preview]
+			}
+
+			additionalGetParameters {
+				tx_news_pi1.controller = News
+				tx_news_pi1.action = detail
+			}
+		}
+	}
+
+	# tx_news is an identifier, don't change it after links have been created
+	linkHandler.tx_news {
+		handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
+		# A translatable label can be used with LLL:EXT:theme/locallang.xml:label
+		label = LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:pagets.news.labelRecordLinks
+		configuration {
+			table = tx_news_domain_model_news
+			# Default storage pid
+			storagePid = 32,54
+			# Hide the page tree by setting it to 1
+			hidePageTree = 0
+			configuration.pageTreeMountPoints = 32,54
+		}
+		scanAfter = events
+	}
+}

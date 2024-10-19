@@ -1,0 +1,14 @@
+styles.content.loginform {
+	pages = 35
+	showForgotPassword = 1
+	showPermaLogin = 1
+	showLogoutFormAfterLogin = 1
+	emailFrom = noreply@leipzigermuldenland.de
+	emailFromName = Leipziger Muldenland
+	replyToEmail = anmeldung@leipzigermuldenland.de
+	newPasswordMinLength = 12
+	forgotLinkHashValidTime = 1
+}
+
+# steffen
+# Kk?234Passwort

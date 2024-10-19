@@ -1,0 +1,39 @@
+RoleDefinitions:
+  -
+    identifier: ACL:Categories
+    title: '[Role] ACL:Categories'
+    TSconfig: ''
+    pagetypes_select: {  }
+    tables_select: {  }
+    tables_modify:
+      - sys_category
+    groupMods: {  }
+    file_permissions:
+      - addFile
+      - addFolder
+      - copyFile
+      - deleteFile
+      - deleteFolder
+      - moveFile
+      - moveFolder
+      - readFile
+      - readFolder
+      - renameFile
+      - renameFolder
+      - replaceFile
+      - writeFile
+      - writeFolder
+    allowed_languages: {  }
+    explicit_allowdeny: {  }
+    non_exclude_fields:
+      sys_category:
+        - endtime
+        - hidden
+        - seo_description
+        - seo_headline
+        - seo_text
+        - seo_title
+        - shortcut
+        - single_pid
+        - slug
+        - starttime

@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:spaceless>
+	<f:layout name="Default"/>
+	<f:section name="Main">
+		<f:if condition="{children}">
+			<f:asset.css href="EXT:muldenland/Resources/Public/Css/accordion.css" identifier="sitepackage-accordion-css"/>
+			
+			<div class="row">
+				<div class="column">
+					<ul class="accordion" data-accordion data-deep-link="true" data-deep-link-smudge="true"
+					    data-deep-link-smudge-delay="600" id="deeplinked-accordion-with-smudge">
+						<f:for as="child" each="{children}">
+							
+							<li class="accordion-item" data-accordion-item>
+								<a class="accordion-title" href="#deeplink{child.uid}">
+									{child.header -> f:format.raw()}
+								</a>
+								<div class="accordion-content" data-tab-content id="deeplink{child.uid}">
+									<f:if condition="{child.renderedContent}">
+										{child.renderedContent -> f:format.raw()}
+									</f:if>
+									<div class="bordertop dashed icon-dreieck-unten"></div>
+								</div>
+						</f:for>
+					</ul>
+				</div>
+			</div>
+		</f:if>
+	</f:section>
+
+</f:spaceless>
+</html>

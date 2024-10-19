@@ -1,0 +1,131 @@
+TCEFORM {
+
+	# tx_news
+	tx_news_domain_model_news {
+		## General
+		# Type [type]
+		type {
+			removeItems = 1, 2
+		}
+
+		# bodytext.disabled = 1
+
+		## TAB Media
+		# Related Files
+		fal_related_files.disabled = 1
+
+		## TAB Categories
+		# Categories
+		# categories.disabled = 1
+
+		## TAB Metadaten
+		# Author Name
+		author.disabled = 1
+		# Author Email
+		author_email.disabled = 1
+		# Keywords (,)
+		# keywords.disabled = 1
+		# Description
+		# description.disabled = 1
+
+		## TAB Relations
+		# Related News
+		related.disabled = 1
+		#Related News (from)
+		related_from.disabled = 1
+		# Related Links
+		related_links.disabled = 1
+		# Tags
+		tags.disabled = 1
+	}
+
+	# end tx_news
+
+	tt_content {
+		# Content Formatierungen
+		pi_flexform.news_pi1 {
+			sDEF {
+				switchableControllerActions {
+					removeItems = News->searchForm, News->searchResult, Tag->list, Category->list, News->detail, News->dateMenu, News->selectedList
+					# News->list;News->detail,
+				}
+
+				# Archiv
+				settings\.archiveRestriction.disabled = 1
+				# Nachrichtendatum später als
+				settings\.timeRestriction.disabled = 1
+				# Nachrichtendatum früher als
+				settings\.timeRestrictionHigh.disabled = 1
+				# Top-Nachrichten
+				settings\.topNewsRestriction.disabled = 1
+			}
+
+			additional {
+				## weitere Einstellungen
+				# Maximale Anzahl anzuzeigender Datensätze
+				# settings\.limit.disabled = 1
+				# Beginnend mit Nachrichtenelement
+				settings\.offset.disabled = 1
+				# Schlagworte
+				settings\.tags.disabled = 1
+				# "Top-Nachrichten" oberhalb
+				settings\.topNewsFirst.disabled = 1
+				# Bereits angezeigte Nachrichten ausschließen
+				settings\.excludeAlreadyDisplayedNews.disabled = 1
+				# Überschreiben von Plugin-Einstellungen deaktivieren
+				settings\.disableOverrideDemand.disabled = 1
+			}
+
+			template {
+				# Maximale Breite für Medienelemente
+				settings\.media\.maxWidth.disabled = 1
+				# Maximale Höhe für Medienelemente
+				settings\.media\.maxHeight.disabled = 1
+				# Länge des Teasers (in Buchstaben)
+				settings\.cropMaxCharacters.disabled = 1
+				settings\.cropMaxCharacters = 200
+			}
+		}
+
+		# layout
+		layout {
+			types.list {
+				## removeItems = 1, 2, 3
+				addItems {
+					# 100 = LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:pagets.news.boxshadow
+				}
+			}
+		}
+
+		categories.disabled = 1
+	}
+
+}
+
+
+# Layouts News
+tx_news.templateLayouts {
+	2 = LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:pagets.news.twocleavers
+	3 = LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:pagets.news.threecleavers
+	4 = LLL:EXT:muldenland/Resources/Private/Site/Language/news/locallang.xlf:pagets.news.projects
+}
+
+// erlaube das CE Textmedia in folgenden Ordnern:
+// 32 = Meldungen (News)
+// 35 = (KK Mitglieder)
+// 36 = Kategorien
+// 44 = Termine (Kalendarize)
+// 54 = Projekte (News)
+[traverse(page, "uid") in [32, 35, 36, 44, 54]]
+	TCEFORM.tt_content {
+		CType {
+			# Remove all CTypes from allowed additional news content field 'content_elements'
+			#removeItems = *
+
+			# allow
+			keepItems = textmedia
+		}
+	}
+
+	TCAdefaults.tt_content.CType = textmedia
+[END]

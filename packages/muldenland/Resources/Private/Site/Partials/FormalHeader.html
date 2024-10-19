@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http:typo3.org/ns/TYPO3Fluid/ViewHelpers">
+<f:spaceless>
+	<nav class="row">
+		<div class="column">
+			<div class="top-bar topbar-sticky-shrink">
+				
+				<!-- -->
+				<f:render arguments="{_all}" partial="Icons/Hintergrund"/>
+				<!-- Logo -->
+				<f:render arguments="{_all}" partial="Icons/Logo"/>
+				
+				<!-- formales Menu -->
+				<f:comment>
+					<!--
+				<f:render arguments="{_all}" partial="Formalnavigation"/>
+				-->
+				</f:comment>
+				<div class="top-bar-right columns show-for-xxlarge header-menu">
+					<ul class="row horizontal menu menu-formal accordion-menu" data-accordion-menu>
+						<f:for as="item" each="{formalesMenu}">
+							<f:render arguments="{_all}" partial="Formalnavigation"/>
+						</f:for>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- End Top Bar -->
+	
+
+</f:spaceless>
+</html>
